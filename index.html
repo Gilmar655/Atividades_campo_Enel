@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Aplicativo responsivo para registro e consolidação de atividades de campo."
+    />
+    <title>Registro de Atividades de Campo</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="./assets/enel-logo.png" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-view-target="dashboard" aria-label="Ir para visão geral">
+          <img src="./assets/enel-logo.png" alt="Enel" />
+          <span>
+            <strong>Atividades de Campo</strong>
+            <small>Gestão técnica • Leste / Norte / ABC</small>
+          </span>
+        </button>
+
+        <div class="topbar-actions">
+          <span class="connection-badge" id="connectionBadge">
+            <span class="connection-dot"></span>
+            <span id="connectionText">Dados locais</span>
+          </span>
+          <button class="btn btn-ghost desktop-only" type="button" id="syncButton">
+            <span aria-hidden="true">↻</span>
+            Sincronizar
+          </button>
+          <button class="btn btn-primary" type="button" data-open-record>
+            <span aria-hidden="true">＋</span>
+            Novo registro
+          </button>
+        </div>
+      </header>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <button class="nav-item active" type="button" data-view-target="dashboard">
+          Visão geral
+        </button>
+        <button class="nav-item" type="button" data-view-target="records">
+          Registros
+          <span class="nav-count" id="recordNavCount">0</span>
+        </button>
+        <button class="nav-item" type="button" data-view-target="pending">
+          Pendências
+          <span class="nav-count" id="pendingNavCount">0</span>
+        </button>
+        <button class="nav-item" type="button" data-view-target="reports">Relatórios</button>
+        <button class="nav-item" type="button" data-view-target="settings">Configuração</button>
+      </nav>
+
+      <main>
+        <section class="view active" id="view-dashboard" data-view="dashboard">
+          <div class="hero-card">
+            <div>
+              <span class="eyebrow">CONTROLE OPERACIONAL EM CAMPO</span>
+              <h1>Registre a atividade no momento em que ela acontece.</h1>
+              <p>
+                Fotos, localização, ações e pendências em um único registro. A estrutura segue
+                integralmente o modelo Dashboard_acompanhamento em campo.
+              </p>
+              <div class="hero-actions">
+                <button class="btn btn-primary btn-large" type="button" data-open-record>
+                  Registrar atividade
+                </button>
+                <button class="btn btn-soft btn-large" type="button" data-view-target="pending">
+                  Acompanhar pendências
+                </button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <div class="pulse-ring ring-one"></div>
+              <div class="pulse-ring ring-two"></div>
+              <div class="map-pin">
+                <span></span>
+              </div>
+              <div class="hero-mini-card">
+                <strong id="heroPhotoCount">0</strong>
+                <span>evidências registradas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">RESUMO</span>
+              <h2>Painel operacional</h2>
+            </div>
+            <div class="period-chip" id="currentPeriodLabel">Período atual</div>
+          </div>
+
+          <div class="kpi-grid">
+            <article class="kpi-card accent-blue">
+              <div class="kpi-icon">▦</div>
+              <div>
+                <span>Registros de campo</span>
+                <strong id="kpiRecords">0</strong>
+                <small id="kpiRecordsNote">Nenhum registro no período</small>
+              </div>
+            </article>
+            <article class="kpi-card accent-green">
+              <div class="kpi-icon">✓</div>
+              <div>
+                <span>Atividades concluídas</span>
+                <strong id="kpiCompleted">0</strong>
+                <small id="kpiCompletedNote">0% dos registros</small>
+              </div>
+            </article>
+            <article class="kpi-card accent-orange">
+              <div class="kpi-icon">!</div>
+              <div>
+                <span>Pendências abertas</span>
+                <strong id="kpiPending">0</strong>
+                <small id="kpiPendingNote">Nenhuma pendência</small>
+              </div>
+            </article>
+            <article class="kpi-card accent-pink">
+              <div class="kpi-icon">⚑</div>
+              <div>
+                <span>Não conformidades</span>
+                <strong id="kpiNonConformities">0</strong>
+                <small id="kpiNonConformitiesNote">Nenhuma ocorrência</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel chart-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">DISTRIBUIÇÃO</span>
+                  <h3>Atividades por status</h3>
+                </div>
+                <span class="panel-tag">Registros</span>
+              </div>
+              <div class="chart-wrap chart-short">
+                <canvas id="statusChart" aria-label="Gráfico de atividades por status"></canvas>
+              </div>
+            </article>
+
+            <article class="panel chart-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">ATIVIDADES</span>
+                  <h3>Atividades por tipo</h3>
+                </div>
+                <span class="panel-tag">Top 6</span>
+              </div>
+              <div class="chart-wrap chart-short">
+                <canvas id="typeChart" aria-label="Gráfico de tipos de atividade"></canvas>
+              </div>
+            </article>
+
+            <article class="panel recent-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">ATUALIZAÇÕES</span>
+                  <h3>Últimos registros</h3>
+                </div>
+                <button class="text-button" type="button" data-view-target="records">
+                  Ver todos →
+                </button>
+              </div>
+              <div id="recentRecords" class="recent-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-records" data-view="records">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">ATIVIDADES REALIZADAS</span>
+              <h1>Registros de campo</h1>
+              <p>Consulte, filtre e exporte os dados já registrados pelos técnicos.</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-open-record>＋ Novo registro</button>
+          </div>
+
+          <div class="filter-panel">
+            <div class="filter-grid">
+              <label class="search-field">
+                <span>Busca geral</span>
+                <input id="filterSearch" type="search" placeholder="ID, técnico, projeto, OS ou endereço" />
+              </label>
+              <label>
+                <span>Data inicial</span>
+                <input id="filterDateStart" type="date" />
+              </label>
+              <label>
+                <span>Data final</span>
+                <input id="filterDateEnd" type="date" />
+              </label>
+              <label>
+                <span>Parceira</span>
+                <select id="filterPartner">
+                  <option value="">Todas</option>
+                </select>
+              </label>
+              <label>
+                <span>Tipo de atividade</span>
+                <select id="filterActivity">
+                  <option value="">Todos</option>
+                </select>
+              </label>
+              <label>
+                <span>Região</span>
+                <select id="filterRegion">
+                  <option value="">Todas</option>
+                  <option value="Região Leste">Região Leste</option>
+                  <option value="Região Oeste">Região Oeste</option>
+                  <option value="Região Norte">Região Norte</option>
+                  <option value="Região Sul">Região Sul</option>
+                  <option value="Região ABC">Região ABC</option>
+                </select>
+              </label>
+              <label>
+                <span>Status</span>
+                <select id="filterStatus">
+                  <option value="">Todos</option>
+                </select>
+              </label>
+            </div>
+            <div class="filter-actions">
+              <button class="btn btn-ghost" type="button" id="resetFilters">Limpar filtros</button>
+              <span class="result-count" id="recordResultCount">0 registros</span>
+              <div class="export-group">
+                <button class="btn btn-primary" type="button" id="exportPeriod">
+                  ↓ Exportar período
+                </button>
+                <button class="btn btn-soft" type="button" id="openOnlineReport">
+                  ▦ Relatório online
+                </button>
+                <button class="btn btn-excel" type="button" id="exportExcel">
+                  ↓ Excel com fotos
+                </button>
+                <button class="btn btn-pdf" type="button" id="exportPdf">↓ PDF com fotos</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel table-panel">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Técnico Enel</th>
+                    <th>Atividade</th>
+                    <th>Parceira</th>
+                    <th>Projeto / OS</th>
+                    <th>Região</th>
+                    <th>Status</th>
+                    <th>Fotos</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="recordsTableBody"></tbody>
+              </table>
+            </div>
+            <div class="mobile-card-list" id="recordsCardList"></div>
+            <div class="empty-state" id="recordsEmpty">
+              <div class="empty-icon">＋</div>
+              <h3>Nenhuma atividade encontrada</h3>
+              <p>Registre a primeira atividade ou ajuste os filtros aplicados.</p>
+              <button class="btn btn-primary" type="button" data-open-record>
+                Criar registro
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-pending" data-view="pending">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">PLANO DE AÇÃO</span>
+              <h1>Ações e pendências</h1>
+              <p>
+                Acompanhe responsáveis, empresas, prioridades, prazos e situação das ações
+                vinculadas às atividades de campo.
+              </p>
+            </div>
+            <button class="btn btn-primary" type="button" data-open-record>
+              ＋ Registrar atividade
+            </button>
+          </div>
+
+          <div class="filter-panel compact-filter">
+            <div class="filter-grid project-filters">
+              <label class="search-field">
+                <span>Busca geral</span>
+                <input
+                  id="pendingSearch"
+                  type="search"
+                  placeholder="ID, atividade, descrição, responsável ou empresa"
+                />
+              </label>
+              <label>
+                <span>Prazo até</span>
+                <input id="pendingDeadlineFilter" type="date" />
+              </label>
+              <label>
+                <span>Empresa</span>
+                <select id="pendingCompanyFilter">
+                  <option value="">Todas</option>
+                </select>
+              </label>
+              <label>
+                <span>Prioridade</span>
+                <select id="pendingPriorityFilter">
+                  <option value="">Todas</option>
+                  <option value="Crítica">Crítica</option>
+                  <option value="Alta">Alta</option>
+                  <option value="Média">Média</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Baixa">Baixa</option>
+                </select>
+              </label>
+              <label>
+                <span>Status</span>
+                <select id="pendingStatusFilter">
+                  <option value="">Todos</option>
+                  <option value="Aberta">Aberta</option>
+                  <option value="Em andamento">Em andamento</option>
+                  <option value="Aguardando parceira">Aguardando parceira</option>
+                  <option value="Aguardando Enel">Aguardando Enel</option>
+                  <option value="Concluída">Concluída</option>
+                  <option value="Cancelada">Cancelada</option>
+                </select>
+              </label>
+            </div>
+            <div class="filter-actions">
+              <button class="btn btn-ghost" type="button" id="resetPendingFilters">
+                Limpar filtros
+              </button>
+              <span class="result-count" id="pendingResultCount">0 pendências</span>
+            </div>
+          </div>
+
+          <div class="panel table-panel">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID ação</th>
+                    <th>ID atividade</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Responsável</th>
+                    <th>Empresa</th>
+                    <th>Prazo</th>
+                    <th>Prioridade</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="pendingTableBody"></tbody>
+              </table>
+            </div>
+            <div class="mobile-card-list" id="pendingCardList"></div>
+            <div class="empty-state" id="pendingEmpty">
+              <div class="empty-icon">✓</div>
+              <h3>Nenhuma pendência encontrada</h3>
+              <p>Não existem ações com os filtros selecionados.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-reports" data-view="reports">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">CONSOLIDAÇÃO</span>
+              <h1>Central de relatórios</h1>
+              <p>Gere a consolidação quinzenal ou mensal com os registros e as evidências.</p>
+            </div>
+          </div>
+
+          <div class="report-layout">
+            <article class="panel report-builder">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">PERÍODO</span>
+                  <h3>Configurar relatório</h3>
+                </div>
+              </div>
+              <div class="report-options">
+                <label>
+                  <span>Modelo</span>
+                  <select id="reportPreset">
+                    <option value="custom">Período personalizado</option>
+                    <option value="first-half">Primeira quinzena atual</option>
+                    <option value="second-half">Segunda quinzena atual</option>
+                    <option value="month">Mês atual</option>
+                    <option value="previous-month">Mês anterior</option>
+                  </select>
+                </label>
+                <div class="two-columns">
+                  <label>
+                    <span>Data inicial</span>
+                    <input id="reportStart" type="date" />
+                  </label>
+                  <label>
+                    <span>Data final</span>
+                    <input id="reportEnd" type="date" />
+                  </label>
+                </div>
+                <label>
+                  <span>Título do relatório</span>
+                  <input id="reportTitle" type="text" value="Relatório consolidado de atividades de campo" />
+                </label>
+              </div>
+              <div class="report-actions">
+                <button class="btn btn-excel" type="button" id="reportExcel">Gerar Excel</button>
+                <button class="btn btn-pdf" type="button" id="reportPdf">Gerar PDF</button>
+              </div>
+            </article>
+
+            <article class="panel report-preview">
+              <span class="eyebrow">PRÉVIA</span>
+              <h3 id="reportPreviewTitle">Relatório consolidado</h3>
+              <p id="reportPreviewPeriod">Selecione um período para visualizar o resumo.</p>
+              <div class="report-kpis">
+                <div><strong id="reportTotal">0</strong><span>Atividades</span></div>
+                <div><strong id="reportPhotos">0</strong><span>Fotos</span></div>
+                <div><strong id="reportPendings">0</strong><span>Pendências</span></div>
+                <div><strong id="reportTechnicians">0</strong><span>Técnicos</span></div>
+              </div>
+              <div class="report-note">
+                O arquivo incluirá resumo executivo, tabela consolidada, pendências e anexo
+                fotográfico organizado pelo ID de cada registro.
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-settings" data-view="settings">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">INTEGRAÇÃO</span>
+              <h1>Google Sheets e armazenamento</h1>
+              <p>
+                O site funciona localmente. Para uso compartilhado, conecte o endereço publicado
+                do Google Apps Script fornecido no pacote.
+              </p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">GOOGLE SHEETS</span>
+                  <h3>Conexão da equipe</h3>
+                </div>
+                <span class="status-pill neutral" id="sheetStatus">Não conectado</span>
+              </div>
+              <div class="settings-form">
+                <label>
+                  <span>URL do aplicativo da Web (Apps Script)</span>
+                  <input
+                    id="sheetEndpoint"
+                    type="url"
+                    placeholder="https://script.google.com/macros/s/.../exec"
+                    autocomplete="off"
+                  />
+                </label>
+                <label>
+                  <span>Token opcional</span>
+                  <input id="sheetToken" type="password" placeholder="Definido no Code.gs" />
+                </label>
+                <div class="settings-actions">
+                  <button class="btn btn-primary" type="button" id="saveSettings">
+                    Salvar conexão
+                  </button>
+                  <button class="btn btn-soft" type="button" id="testConnection">
+                    Testar
+                  </button>
+                  <button class="btn btn-ghost" type="button" id="pullRecords">
+                    Importar registros
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">BASE LOCAL</span>
+                  <h3>Gerenciamento dos dados</h3>
+                </div>
+              </div>
+              <div class="storage-stats">
+                <div><span>Registros salvos</span><strong id="storageRecords">0</strong></div>
+                <div><span>Pendências cadastradas</span><strong id="storagePendings">0</strong></div>
+                <div><span>Registros aguardando envio</span><strong id="storagePendingSync">0</strong></div>
+              </div>
+              <div class="settings-actions">
+                <label class="btn btn-soft file-button">
+                  Importar base Excel
+                  <input class="import-workbook-mirror" type="file" accept=".xlsx,.xls,.csv" />
+                </label>
+                <button class="btn btn-ghost danger-text" type="button" id="clearLocalRecords">
+                  Limpar registros locais
+                </button>
+              </div>
+            </article>
+
+            <article class="panel help-panel">
+              <div class="help-number">1</div>
+              <div>
+                <h3>Configure a planilha</h3>
+                <p>Copie o arquivo Code.gs do pacote para um projeto do Google Apps Script.</p>
+              </div>
+              <div class="help-number">2</div>
+              <div>
+                <h3>Publique como aplicativo da Web</h3>
+                <p>Defina a permissão conforme a política da sua organização e copie a URL.</p>
+              </div>
+              <div class="help-number">3</div>
+              <div>
+                <h3>Conecte e sincronize</h3>
+                <p>Cole a URL acima. Os novos registros poderão ser enviados para o Google Sheets.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <nav class="mobile-nav" aria-label="Navegação móvel">
+        <button class="active" type="button" data-view-target="dashboard"><span>⌂</span>Início</button>
+        <button type="button" data-view-target="records"><span>▦</span>Registros</button>
+        <button class="mobile-add" type="button" data-open-record><span>＋</span>Novo</button>
+        <button type="button" data-view-target="pending"><span>!</span>Pendências</button>
+        <button type="button" data-view-target="reports"><span>↧</span>Relatórios</button>
+      </nav>
+    </div>
+
+    <dialog class="record-dialog" id="recordDialog">
+      <form id="recordForm">
+        <div class="dialog-header">
+          <div>
+            <span class="eyebrow">NOVO REGISTRO</span>
+            <h2>Atividade realizada em campo</h2>
+            <p id="generatedIdPreview">O ID será gerado automaticamente.</p>
+          </div>
+          <button class="icon-button" type="button" data-close-dialog aria-label="Fechar">×</button>
+        </div>
+
+        <div class="form-progress" aria-hidden="true">
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="dialog-body">
+          <section class="form-section">
+            <div class="form-section-title">
+              <span>1</span>
+              <div>
+                <h3>Identificação</h3>
+                <p>Responsável e dados principais da atividade.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label class="field required">
+                <span>Técnico Enel</span>
+                <input
+                  id="technician"
+                  name="technician"
+                  type="text"
+                  required
+                  autocomplete="off"
+                  placeholder="Preencher manualmente"
+                />
+                <small>Este campo permanece sempre em branco ao iniciar.</small>
+              </label>
+              <label class="field">
+                <span>Matrícula do técnico</span>
+                <input id="technicianRegistration" name="technicianRegistration" type="text" />
+              </label>
+              <label class="field required">
+                <span>Data da atividade</span>
+                <input id="activityDate" name="activityDate" type="date" required />
+              </label>
+              <label class="field required">
+                <span>Horário de início</span>
+                <input id="startTime" name="startTime" type="time" required />
+              </label>
+              <label class="field">
+                <span>Horário de término</span>
+                <input id="endTime" name="endTime" type="time" />
+              </label>
+              <label class="field required span-2">
+                <span>Tipo de atividade</span>
+                <select id="activityType" name="activityType" required></select>
+              </label>
+              <label class="field span-2 hidden" id="otherActivityField">
+                <span>Descreva a outra atividade</span>
+                <input id="otherActivity" name="otherActivity" type="text" />
+              </label>
+              <label class="field required">
+                <span>Parceira</span>
+                <select id="partner" name="partner" required></select>
+              </label>
+              <label class="field hidden" id="otherPartnerField">
+                <span>Nome da outra parceira</span>
+                <input id="otherPartner" name="otherPartner" type="text" />
+              </label>
+              <label class="field required">
+                <span>Região</span>
+                <select id="region" name="region" required>
+                  <option value="">Selecione</option>
+                  <option value="Região Leste">Região Leste</option>
+                  <option value="Região Oeste">Região Oeste</option>
+                  <option value="Região Norte">Região Norte</option>
+                  <option value="Região Sul">Região Sul</option>
+                  <option value="Região ABC">Região ABC</option>
+                  <option value="Todas">Todas</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Polo</span>
+                <select id="pole" name="pole"></select>
+              </label>
+              <label class="field">
+                <span>Status</span>
+                <select id="activityStatus" name="activityStatus"></select>
+              </label>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="form-section-title">
+              <span>2</span>
+              <div>
+                <h3>Projeto e intervenção</h3>
+                <p>Informe as referências operacionais relacionadas ao acompanhamento.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>Número do contrato</span>
+                <input id="contractNumber" name="contractNumber" type="text" />
+              </label>
+              <label class="field">
+                <span>Número do projeto</span>
+                <input id="projectNumber" name="projectNumber" type="text" />
+              </label>
+              <label class="field">
+                <span>Número da OS</span>
+                <input id="workOrder" name="workOrder" type="text" />
+              </label>
+              <label class="field">
+                <span>Circuito</span>
+                <input id="circuit" name="circuit" type="text" />
+              </label>
+              <label class="field">
+                <span>Tipo de intervenção</span>
+                <select id="interventionType" name="interventionType"></select>
+              </label>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="form-section-title">
+              <span>3</span>
+              <div>
+                <h3>Localização</h3>
+                <p>Capture as coordenadas no celular e confirme o endereço.</p>
+              </div>
+            </div>
+            <div class="location-box">
+              <div class="form-grid">
+                <label class="field span-2">
+                  <span>Endereço</span>
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    placeholder="Rua, número, bairro e município"
+                  />
+                </label>
+                <label class="field span-2">
+                  <span>Município</span>
+                  <input id="municipality" name="municipality" type="text" />
+                </label>
+                <label class="field">
+                  <span>Latitude</span>
+                  <input id="latitude" name="latitude" type="number" step="any" />
+                </label>
+                <label class="field">
+                  <span>Longitude</span>
+                  <input id="longitude" name="longitude" type="number" step="any" />
+                </label>
+              </div>
+              <button class="btn btn-location" type="button" id="captureLocation">
+                <span>⌖</span>
+                Usar localização atual
+              </button>
+              <small id="locationFeedback">A permissão de localização será solicitada pelo navegador.</small>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="form-section-title">
+              <span>4</span>
+              <div>
+                <h3>Relato de campo</h3>
+                <p>Registre o que foi verificado, realizado e o que ficou pendente.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label class="field required span-2">
+                <span>Descrição da atividade</span>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                  required
+                  placeholder="Descreva objetivamente a atividade acompanhada..."
+                ></textarea>
+              </label>
+              <label class="field span-2">
+                <span>Situação encontrada</span>
+                <textarea id="situation" name="situation" rows="3"></textarea>
+              </label>
+              <label class="field span-2">
+                <span>Ações realizadas</span>
+                <textarea id="actionsTaken" name="actionsTaken" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Resultado da atividade</span>
+                <input
+                  id="activityResult"
+                  name="activityResult"
+                  type="text"
+                  placeholder="Conforme, em andamento..."
+                />
+              </label>
+              <label class="field">
+                <span>Prioridade</span>
+                <select id="priority" name="priority"></select>
+              </label>
+              <label class="toggle-field">
+                <input id="hasNonConformity" name="hasNonConformity" type="checkbox" />
+                <span>Foi identificada não conformidade</span>
+              </label>
+              <label class="toggle-field">
+                <input id="hasPending" name="hasPending" type="checkbox" />
+                <span>A atividade possui pendência</span>
+              </label>
+              <label class="field span-2 hidden" id="nonConformityField">
+                <span>Descrição da não conformidade</span>
+                <textarea id="nonConformity" name="nonConformity" rows="3"></textarea>
+              </label>
+              <div class="form-grid span-2 hidden nested-fields" id="pendingFields">
+                <label class="field span-2">
+                  <span>Descrição da pendência</span>
+                  <textarea id="pendingDescription" name="pendingDescription" rows="3"></textarea>
+                </label>
+                <label class="field">
+                  <span>Responsável</span>
+                  <input id="pendingOwner" name="pendingOwner" type="text" />
+                </label>
+                <label class="field">
+                  <span>Empresa responsável</span>
+                  <input id="pendingCompany" name="pendingCompany" type="text" />
+                </label>
+                <label class="field">
+                  <span>Prazo</span>
+                  <input id="pendingDeadline" name="pendingDeadline" type="date" />
+                </label>
+                <label class="field">
+                  <span>Status da ação</span>
+                  <select id="pendingStatus" name="pendingStatus">
+                    <option value="Aberta">Aberta</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Aguardando parceira">Aguardando parceira</option>
+                    <option value="Aguardando Enel">Aguardando Enel</option>
+                    <option value="Concluída">Concluída</option>
+                    <option value="Cancelada">Cancelada</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="form-section-title">
+              <span>5</span>
+              <div>
+                <h3>Evidências fotográficas</h3>
+                <p>Adicione fotos pela câmera ou galeria. Elas seguirão no Excel e no PDF.</p>
+              </div>
+            </div>
+            <label class="photo-dropzone" for="photoInput">
+              <span class="photo-icon">▧</span>
+              <strong>Adicionar fotos</strong>
+              <small>JPG, PNG ou imagem da câmera • até 8 fotos</small>
+              <input id="photoInput" type="file" accept="image/*" capture="environment" multiple />
+            </label>
+            <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+          </section>
+        </div>
+
+        <div class="dialog-footer">
+          <button class="btn btn-ghost" type="button" data-close-dialog>Cancelar</button>
+          <button class="btn btn-soft" type="button" id="saveDraft">Salvar rascunho</button>
+          <button class="btn btn-primary" type="submit">Finalizar registro</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="detail-dialog" id="detailDialog">
+      <div class="dialog-header">
+        <div>
+          <span class="eyebrow">DETALHES</span>
+          <h2 id="detailTitle">Registro</h2>
+          <p id="detailSubtitle"></p>
+        </div>
+        <button class="icon-button" type="button" data-close-detail aria-label="Fechar">×</button>
+      </div>
+      <div class="dialog-body" id="detailContent"></div>
+      <div class="dialog-footer">
+        <button class="btn btn-ghost danger-text" type="button" id="deleteRecord">
+          Excluir registro
+        </button>
+        <button class="btn btn-primary" type="button" data-close-detail>Fechar</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./assets/vendor/exceljs.min.js"></script>
+    <script src="./assets/vendor/jspdf.umd.min.js"></script>
+    <script src="./assets/vendor/jspdf.plugin.autotable.min.js"></script>
+    <script src="./assets/vendor/chart.umd.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

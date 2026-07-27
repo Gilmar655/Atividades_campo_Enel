@@ -1,0 +1,4536 @@
+{
+  "USUARIOS": [
+    [
+      "ID_USUARIO",
+      "NOME_COMPLETO",
+      "EMAIL",
+      "MATRICULA",
+      "FUNCAO",
+      "PERFIL_ACESSO",
+      "REGIAO",
+      "POLO",
+      "STATUS_USUARIO",
+      "DATA_CADASTRO"
+    ],
+    [
+      "USR001",
+      "João Silva Santos",
+      "joao.silva@enel.com",
+      "E12345",
+      "Técnico de Distribuição",
+      "Técnico de Campo",
+      "Região Leste",
+      "Polo Centro",
+      "Ativo",
+      46037
+    ],
+    [
+      "USR002",
+      "Maria Oliveira Costa",
+      "maria.oliveira@enel.com",
+      "E12346",
+      "Analista Técnico",
+      "Técnico Enel/Gestor",
+      "Região Leste",
+      "Polo Centro",
+      "Ativo",
+      46032
+    ],
+    [
+      "USR003",
+      "Carlos Pereira Lima",
+      "carlos.pereira@enel.com",
+      "E12347",
+      "Coordenador de Operações",
+      "Administrador",
+      "Todas",
+      "Todos",
+      "Ativo",
+      46027
+    ]
+  ],
+  "REGISTROS_ATIVIDADES": [
+    [
+      "ID_ATIVIDADE",
+      "DATA_CRIACAO",
+      "HORA_CRIACAO",
+      "DATA_ATIVIDADE",
+      "HORA_INICIO",
+      "HORA_TERMINO",
+      "DURACAO_ATIVIDADE",
+      "EMAIL_USUARIO",
+      "ID_TECNICO",
+      "NOME_TECNICO_ENEL",
+      "MATRICULA_TECNICO",
+      "REGIAO",
+      "POLO",
+      "TIPO_ATIVIDADE",
+      "OUTRO_TIPO_ATIVIDADE",
+      "ID_PARCEIRA",
+      "NOME_PARCEIRA",
+      "NUMERO_CONTRATO",
+      "NUMERO_PROJETO",
+      "NUMERO_OS",
+      "CIRCUITO",
+      "TIPO_INTERVENCAO",
+      "LOCALIZACAO_GPS",
+      "LATITUDE",
+      "LONGITUDE",
+      "ENDERECO",
+      "MUNICIPIO",
+      "DESCRICAO_ATIVIDADE",
+      "SITUACAO_ENCONTRADA",
+      "ACAO_REALIZADA",
+      "RESULTADO_ATIVIDADE",
+      "EXISTE_NAO_CONFORMIDADE",
+      "DESCRICAO_NAO_CONFORMIDADE",
+      "EXISTE_PENDENCIA",
+      "DESCRICAO_PENDENCIA",
+      "RESPONSAVEL_PENDENCIA",
+      "PRAZO_PENDENCIA",
+      "PRIORIDADE",
+      "STATUS_ATIVIDADE",
+      "QUANTIDADE_FOTOS",
+      "LINK_MAPA",
+      "DATA_ULTIMA_ALTERACAO",
+      "USUARIO_ULTIMA_ALTERACAO",
+      "STATUS_SINCRONIZACAO",
+      "OBSERVACOES"
+    ],
+    [
+      "ATV-2026-0001",
+      46230,
+      0.3541666666666667,
+      46230,
+      0.375,
+      0.4791666666666667,
+      0.10416666666666667,
+      "joao.silva@enel.com",
+      "USR001",
+      "João Silva Santos",
+      "E12345",
+      "Região Leste",
+      "Polo Centro",
+      "Fiscalização de segurança em equipe de parceira",
+      null,
+      "PARC001",
+      "Start Engenharia",
+      "CT-2026-001",
+      "PRJ-2026-0150",
+      "OS-123456",
+      "CIR-LESTE-001",
+      "Manutenção Preventiva",
+      "-23.5505,-46.6333",
+      -23.5505,
+      -46.6333,
+      "Av. Paulista, 1000 - Bela Vista",
+      "São Paulo",
+      "Fiscalização de procedimentos de segurança durante manutenção em linha de média tensão",
+      "Equipe utilizando EPIs corretamente. Sinalização adequada.",
+      "Verificação completa dos procedimentos. Orientações sobre aterramento temporário.",
+      "Conforme",
+      "Não",
+      null,
+      "Não",
+      null,
+      null,
+      null,
+      "Normal",
+      "Concluída",
+      3,
+      "https://maps.google.com/?q=-23.5505,-46.6333",
+      46230,
+      "joao.silva@enel.com",
+      "Sincronizado",
+      null
+    ],
+    [
+      "ATV-2026-0002",
+      46230,
+      0.5833333333333334,
+      46230,
+      0.6041666666666666,
+      0.7083333333333334,
+      0.10416666666666667,
+      "joao.silva@enel.com",
+      "USR001",
+      "João Silva Santos",
+      "E12345",
+      "Região Leste",
+      "Polo Centro",
+      "Acompanhamento de projeto prioritário",
+      null,
+      "PARC002",
+      "Essencial Energia",
+      "CT-2026-002",
+      "PRJ-2026-0175",
+      "OS-123789",
+      "CIR-LESTE-003",
+      "Expansão de Rede",
+      "-23.5629,-46.6544",
+      -23.5629,
+      -46.6544,
+      "Rua Augusta, 500 - Consolação",
+      "São Paulo",
+      "Acompanhamento de instalação de novo alimentador para atender demanda comercial",
+      "Obra em andamento. 60% concluída. Materiais no local.",
+      "Verificação do cronograma. Reunião com encarregado da parceira.",
+      "Em andamento",
+      "Sim",
+      "Falta de sinalização noturna adequada em trecho da via",
+      "Sim",
+      "Providenciar sinalização noturna conforme NR-18",
+      "Essencial Energia",
+      46233,
+      "Alta",
+      "Concluída com pendência",
+      5,
+      "https://maps.google.com/?q=-23.5629,-46.6544",
+      46230,
+      "joao.silva@enel.com",
+      "Sincronizado",
+      "Retornar em 3 dias para verificar correção"
+    ]
+  ],
+  "TIPOS_ATIVIDADE": [
+    [
+      "ID_TIPO",
+      "NOME_TIPO_ATIVIDADE",
+      "DESCRICAO",
+      "EXIGE_FOTO",
+      "EXIGE_LOCALIZACAO",
+      "CATEGORIA",
+      "STATUS_TIPO",
+      "ORDEM_EXIBICAO"
+    ],
+    [
+      "TIPO001",
+      "Acompanhamento de Momento Enel na parceira",
+      "Verificação de atividades durante momento Enel",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      1
+    ],
+    [
+      "TIPO002",
+      "Viabilidade de projeto",
+      "Análise de viabilidade técnica de projeto",
+      "Sim",
+      "Sim",
+      "Planejamento",
+      "Ativo",
+      2
+    ],
+    [
+      "TIPO003",
+      "Viabilidade para redução de clientes interrompidos",
+      "Estudo para minimizar interrupções",
+      "Sim",
+      "Sim",
+      "Planejamento",
+      "Ativo",
+      3
+    ],
+    [
+      "TIPO004",
+      "Viabilidade de gerador de média tensão",
+      "Avaliação de uso de gerador MT",
+      "Sim",
+      "Sim",
+      "Planejamento",
+      "Ativo",
+      4
+    ],
+    [
+      "TIPO005",
+      "Fiscalização de segurança em equipe de parceira",
+      "Verificação de normas de segurança",
+      "Sim",
+      "Sim",
+      "Fiscalização",
+      "Ativo",
+      5
+    ],
+    [
+      "TIPO006",
+      "Realização de mega blitz no pátio da parceira",
+      "Inspeção intensiva em pátio",
+      "Sim",
+      "Sim",
+      "Fiscalização",
+      "Ativo",
+      6
+    ],
+    [
+      "TIPO007",
+      "Acompanhamento de projeto com utilização de gerador de média tensão",
+      "Monitoramento de projeto com gerador MT",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      7
+    ],
+    [
+      "TIPO008",
+      "Acompanhamento de projeto prioritário",
+      "Monitoramento de projeto de alta prioridade",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      8
+    ],
+    [
+      "TIPO009",
+      "Visita técnica",
+      "Visita para avaliação técnica",
+      "Sim",
+      "Sim",
+      "Visita",
+      "Ativo",
+      9
+    ],
+    [
+      "TIPO010",
+      "Inspeção de campo",
+      "Inspeção geral em campo",
+      "Sim",
+      "Sim",
+      "Fiscalização",
+      "Ativo",
+      10
+    ],
+    [
+      "TIPO011",
+      "Acompanhamento de execução de projeto",
+      "Monitoramento da execução de obra",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      11
+    ],
+    [
+      "TIPO012",
+      "Reunião ou alinhamento em campo",
+      "Reunião presencial em campo",
+      "Não",
+      "Sim",
+      "Reunião",
+      "Ativo",
+      12
+    ],
+    [
+      "TIPO013",
+      "Verificação de materiais",
+      "Conferência de materiais em obra",
+      "Sim",
+      "Sim",
+      "Fiscalização",
+      "Ativo",
+      13
+    ],
+    [
+      "TIPO014",
+      "Comissionamento",
+      "Atividade de comissionamento de equipamentos",
+      "Sim",
+      "Sim",
+      "Técnico",
+      "Ativo",
+      14
+    ],
+    [
+      "TIPO015",
+      "Acompanhamento de linha viva",
+      "Monitoramento de trabalho em linha viva",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      15
+    ],
+    [
+      "TIPO016",
+      "Acompanhamento de desligamento programado",
+      "Monitoramento de desligamento",
+      "Sim",
+      "Sim",
+      "Acompanhamento",
+      "Ativo",
+      16
+    ],
+    [
+      "TIPO017",
+      "Outras",
+      "Outros tipos de atividade não listados",
+      "Não",
+      "Sim",
+      "Outros",
+      "Ativo",
+      17
+    ]
+  ],
+  "PARCEIRAS": [
+    [
+      "ID_PARCEIRA",
+      "NOME_PARCEIRA",
+      "NUMERO_CONTRATO",
+      "RESPONSAVEL",
+      "TELEFONE",
+      "EMAIL",
+      "REGIAO_ATENDIDA",
+      "STATUS_PARCEIRA"
+    ],
+    [
+      "PARC001",
+      "Start Engenharia",
+      "CT-2026-001",
+      "Roberto Mendes",
+      "(11) 99999-0001",
+      "contato@startengenharia.com.br",
+      "Região Leste",
+      "Ativa"
+    ],
+    [
+      "PARC002",
+      "Essencial Energia",
+      "CT-2026-002",
+      "Fernanda Alves",
+      "(11) 99999-0002",
+      "contato@essencialenergia.com.br",
+      "Região Leste",
+      "Ativa"
+    ],
+    [
+      "PARC003",
+      "PSC Energy",
+      "CT-2026-003",
+      "Marcos Paulo",
+      "(11) 99999-0003",
+      "contato@pscenergy.com.br",
+      "Região Norte",
+      "Ativa"
+    ],
+    [
+      "PARC004",
+      "Conecta Empreendimentos",
+      "CT-2026-004",
+      "Juliana Souza",
+      "(11) 99999-0004",
+      "contato@conecta.com.br",
+      "Região Sul",
+      "Ativa"
+    ],
+    [
+      "PARC005",
+      "Engelmig",
+      "CT-2026-005",
+      "André Costa",
+      "(11) 99999-0005",
+      "contato@engelmig.com.br",
+      "Região Oeste",
+      "Ativa"
+    ],
+    [
+      "PARC006",
+      "Outras",
+      null,
+      null,
+      null,
+      null,
+      "Todas",
+      "Ativa"
+    ]
+  ],
+  "FOTOS_ATIVIDADES": [
+    [
+      "ID_FOTO",
+      "ID_ATIVIDADE",
+      "FOTO",
+      "LEGENDA_FOTO",
+      "TIPO_EVIDENCIA",
+      "DATA_FOTO",
+      "HORA_FOTO",
+      "LOCALIZACAO_FOTO",
+      "USUARIO_RESPONSAVEL",
+      "LINK_ARQUIVO"
+    ],
+    [
+      "FOTO-0001",
+      "ATV-2026-0001",
+      "[Imagem]",
+      "Equipe com EPIs antes do início",
+      "Antes da atividade",
+      46230,
+      0.3784722222222222,
+      "-23.5505,-46.6333",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx1"
+    ],
+    [
+      "FOTO-0002",
+      "ATV-2026-0001",
+      "[Imagem]",
+      "Verificação de aterramento",
+      "Durante a atividade",
+      46230,
+      0.4270833333333333,
+      "-23.5505,-46.6333",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx2"
+    ],
+    [
+      "FOTO-0003",
+      "ATV-2026-0001",
+      "[Imagem]",
+      "Sinalização do local",
+      "Durante a atividade",
+      46230,
+      0.4375,
+      "-23.5505,-46.6333",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx3"
+    ],
+    [
+      "FOTO-0004",
+      "ATV-2026-0002",
+      "[Imagem]",
+      "Vista geral da obra",
+      "Antes da atividade",
+      46230,
+      0.6076388888888888,
+      "-23.5629,-46.6544",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx4"
+    ],
+    [
+      "FOTO-0005",
+      "ATV-2026-0002",
+      "[Imagem]",
+      "Materiais no local",
+      "Durante a atividade",
+      46230,
+      0.6388888888888888,
+      "-23.5629,-46.6544",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx5"
+    ],
+    [
+      "FOTO-0006",
+      "ATV-2026-0002",
+      "[Imagem]",
+      "Falta de sinalização noturna",
+      "Não conformidade",
+      46230,
+      0.6666666666666666,
+      "-23.5629,-46.6544",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx6"
+    ],
+    [
+      "FOTO-0007",
+      "ATV-2026-0002",
+      "[Imagem]",
+      "Equipe parceira trabalhando",
+      "Equipe",
+      46230,
+      0.6770833333333334,
+      "-23.5629,-46.6544",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx7"
+    ],
+    [
+      "FOTO-0008",
+      "ATV-2026-0002",
+      "[Imagem]",
+      "Situação final da visita",
+      "Depois da atividade",
+      46230,
+      0.6979166666666666,
+      "-23.5629,-46.6544",
+      "joao.silva@enel.com",
+      "https://drive.google.com/file/d/xxx8"
+    ]
+  ],
+  "ACOES_PENDENCIAS": [
+    [
+      "ID_ACAO",
+      "ID_ATIVIDADE",
+      "TIPO_ACAO",
+      "DESCRICAO_ACAO",
+      "RESPONSAVEL",
+      "EMPRESA_RESPONSAVEL",
+      "DATA_ABERTURA",
+      "PRAZO",
+      "PRIORIDADE",
+      "STATUS_ACAO",
+      "DATA_CONCLUSAO",
+      "COMPROVACAO_CONCLUSAO",
+      "OBSERVACOES"
+    ],
+    [
+      "ACAO-0001",
+      "ATV-2026-0002",
+      "Pendência",
+      "Providenciar sinalização noturna conforme NR-18",
+      "Fernanda Alves",
+      "Essencial Energia",
+      46230,
+      46233,
+      "Alta",
+      "Aberta",
+      null,
+      null,
+      "Sinalização deve incluir cones refletivos e fita zebrada"
+    ],
+    [
+      "ACAO-0002",
+      "ATV-2026-0002",
+      "Ação Corretiva",
+      "Reforçar treinamento de segurança da equipe",
+      "Fernanda Alves",
+      "Essencial Energia",
+      46230,
+      46239,
+      "Média",
+      "Em andamento",
+      null,
+      null,
+      "Solicitar lista de presença do treinamento"
+    ]
+  ],
+  "CONFIGURACOES": [
+    [
+      "REGIÕES",
+      null,
+      null,
+      "POLOS",
+      null,
+      null,
+      "TIPOS DE INTERVENÇÃO",
+      null,
+      null,
+      "PRIORIDADES",
+      null,
+      null
+    ],
+    [
+      "ID_REGIAO",
+      "NOME_REGIAO",
+      null,
+      "ID_POLO",
+      "NOME_POLO",
+      null,
+      "ID_INTERVENCAO",
+      "NOME_INTERVENCAO",
+      null,
+      "ID_PRIORIDADE",
+      "NOME_PRIORIDADE",
+      "COR"
+    ],
+    [
+      "REG001",
+      "Região Leste",
+      null,
+      "POLO001",
+      "Polo Centro",
+      null,
+      "INT001",
+      "Manutenção Preventiva",
+      null,
+      "PRI001",
+      "Crítica",
+      "#C00000"
+    ],
+    [
+      "REG002",
+      "Região Oeste",
+      null,
+      "POLO002",
+      "Polo Norte",
+      null,
+      "INT002",
+      "Manutenção Corretiva",
+      null,
+      "PRI002",
+      "Alta",
+      "#FF6600"
+    ],
+    [
+      "REG003",
+      "Região Norte",
+      null,
+      "POLO003",
+      "Polo Sul",
+      null,
+      "INT003",
+      "Expansão de Rede",
+      null,
+      "PRI003",
+      "Média",
+      "#FFCC00"
+    ],
+    [
+      "REG004",
+      "Região Sul",
+      null,
+      "POLO004",
+      "Polo Leste",
+      null,
+      "INT004",
+      "Substituição de Equipamento",
+      null,
+      "PRI004",
+      "Normal",
+      "#00B050"
+    ],
+    [
+      "REG005",
+      "Região Central",
+      null,
+      "POLO005",
+      "Polo Oeste",
+      null,
+      "INT005",
+      "Poda de Árvore",
+      null,
+      "PRI005",
+      "Baixa",
+      "#808080"
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "INT006",
+      "Instalação de Medidor",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "INT007",
+      "Religação",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "STATUS DAS ATIVIDADES",
+      null,
+      null,
+      "TIPOS DE EVIDÊNCIA",
+      null,
+      null,
+      "INT008",
+      "Corte",
+      null,
+      "CONFIGURAÇÕES GERAIS",
+      null,
+      null
+    ],
+    [
+      "ID_STATUS",
+      "NOME_STATUS",
+      "COR",
+      "ID_EVIDENCIA",
+      "NOME_EVIDENCIA",
+      null,
+      "INT009",
+      "Emergência",
+      null,
+      "PARAMETRO",
+      "VALOR",
+      null
+    ],
+    [
+      "STA001",
+      "Rascunho",
+      "#808080",
+      "EVI001",
+      "Antes da atividade",
+      null,
+      "INT010",
+      "Outros",
+      null,
+      "PRAZO_EDICAO_DIAS",
+      3,
+      null
+    ],
+    [
+      "STA002",
+      "Em andamento",
+      "#FFCC00",
+      "EVI002",
+      "Durante a atividade",
+      null,
+      null,
+      null,
+      null,
+      "EMAIL_RELATORIO_QUINZENAL",
+      "gestores@enel.com",
+      null
+    ],
+    [
+      "STA003",
+      "Concluída",
+      "#00B050",
+      "EVI003",
+      "Depois da atividade",
+      null,
+      null,
+      null,
+      null,
+      "EMAIL_RELATORIO_MENSAL",
+      "gestores@enel.com;diretoria@enel.com",
+      null
+    ],
+    [
+      "STA004",
+      "Concluída com pendência",
+      "#FF9900",
+      "EVI004",
+      "Não conformidade",
+      null,
+      "STATUS DAS AÇÕES",
+      null,
+      null,
+      "HORARIO_AUTOMACAO",
+      0.25,
+      null
+    ],
+    [
+      "STA005",
+      "Parcial",
+      "#FF9900",
+      "EVI005",
+      "Segurança",
+      null,
+      "ID_STATUS_ACAO",
+      "NOME_STATUS_ACAO",
+      null,
+      "PASTA_DRIVE_FOTOS",
+      "Atividades de Campo",
+      null
+    ],
+    [
+      "STA006",
+      "Cancelada",
+      "#C00000",
+      "EVI006",
+      "Equipamento",
+      null,
+      "SAC001",
+      "Aberta",
+      null,
+      "RETENCAO_FOTOS_MESES",
+      24,
+      null
+    ],
+    [
+      "STA007",
+      "Aguardando retorno",
+      "#FFCC00",
+      "EVI007",
+      "Material",
+      null,
+      "SAC002",
+      "Em andamento",
+      null,
+      "RETENCAO_REGISTROS_MESES",
+      60,
+      null
+    ],
+    [
+      "STA008",
+      "Reprogramada",
+      "#0070C0",
+      "EVI008",
+      "Equipe",
+      null,
+      "SAC003",
+      "Aguardando parceira",
+      null,
+      "DIA_RELATORIO_QUINZENAL_1",
+      16,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "EVI009",
+      "Documento",
+      null,
+      "SAC004",
+      "Aguardando Enel",
+      null,
+      "DIA_RELATORIO_QUINZENAL_2",
+      1,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "EVI010",
+      "Outros",
+      null,
+      "SAC005",
+      "Concluída",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "SAC006",
+      "Cancelada",
+      null,
+      null,
+      null,
+      null
+    ]
+  ],
+  "LOG_ALTERACOES": [
+    [
+      "ID_LOG",
+      "ID_ATIVIDADE",
+      "DATA_HORA",
+      "EMAIL_USUARIO",
+      "TIPO_OPERACAO",
+      "CAMPO_ALTERADO",
+      "VALOR_ANTERIOR",
+      "VALOR_NOVO"
+    ],
+    [
+      "LOG-0001",
+      "ATV-2026-0001",
+      46230.354166666664,
+      "joao.silva@enel.com",
+      "CRIACAO",
+      "-",
+      "-",
+      "Registro criado"
+    ],
+    [
+      "LOG-0002",
+      "ATV-2026-0001",
+      46230.489583333336,
+      "joao.silva@enel.com",
+      "ALTERACAO",
+      "STATUS_ATIVIDADE",
+      "Em andamento",
+      "Concluída"
+    ],
+    [
+      "LOG-0003",
+      "ATV-2026-0002",
+      46230.583333333336,
+      "joao.silva@enel.com",
+      "CRIACAO",
+      "-",
+      "-",
+      "Registro criado"
+    ],
+    [
+      "LOG-0004",
+      "ATV-2026-0002",
+      46230.71875,
+      "joao.silva@enel.com",
+      "ALTERACAO",
+      "STATUS_ATIVIDADE",
+      "Em andamento",
+      "Concluída com pendência"
+    ],
+    [
+      "LOG-0005",
+      "ATV-2026-0002",
+      46230.71944444445,
+      "joao.silva@enel.com",
+      "ADICAO_FOTO",
+      "QUANTIDADE_FOTOS",
+      4,
+      5
+    ]
+  ],
+  "DASHBOARD": [
+    [
+      "DASHBOARD GERENCIAL - REGISTRO DE ATIVIDADES DE CAMPO ENEL",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "FILTROS",
+      null,
+      null,
+      "INDICADORES PRINCIPAIS",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Período Inicial:",
+      46204,
+      null,
+      "Total de Atividades",
+      2,
+      null,
+      null,
+      null
+    ],
+    [
+      "Período Final:",
+      46234,
+      null,
+      "Atividades Concluídas",
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      "Região:",
+      "Todas",
+      null,
+      "Atividades com Pendência",
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      "Técnico:",
+      "Todos",
+      null,
+      "Pendências Vencidas",
+      "1899-12-30T00:00:00.000Z",
+      null,
+      null,
+      null
+    ],
+    [
+      "Parceira:",
+      "Todas",
+      null,
+      "Não Conformidades",
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "Técnicos Ativos",
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "Parceiras Acompanhadas",
+      2,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "Projetos Acompanhados",
+      2,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "Atividades com Fotos",
+      2,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      "Municípios Visitados",
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      "ATIVIDADES POR STATUS",
+      null,
+      null,
+      null,
+      "ATIVIDADES POR PARCEIRA",
+      null,
+      null,
+      null
+    ],
+    [
+      "Status",
+      "Quantidade",
+      "Percentual",
+      null,
+      "Parceira",
+      "Quantidade",
+      "Percentual",
+      null
+    ],
+    [
+      "Concluída",
+      1,
+      0.5,
+      null,
+      "Start Engenharia",
+      1,
+      0.5,
+      null
+    ],
+    [
+      "Concluída com pendência",
+      1,
+      0.5,
+      null,
+      "Essencial Energia",
+      1,
+      0.5,
+      null
+    ],
+    [
+      "Em andamento",
+      0,
+      0,
+      null,
+      "PSC Energy",
+      0,
+      0,
+      null
+    ],
+    [
+      "Parcial",
+      0,
+      0,
+      null,
+      "Conecta Empreendimentos",
+      0,
+      0,
+      null
+    ],
+    [
+      "Cancelada",
+      0,
+      0,
+      null,
+      "Engelmig",
+      0,
+      0,
+      null
+    ],
+    [
+      "Rascunho",
+      0,
+      0,
+      null,
+      "Outras",
+      0,
+      0,
+      null
+    ],
+    [
+      "ATIVIDADES POR TIPO (TOP 10)",
+      null,
+      null,
+      null,
+      "PENDÊNCIAS POR STATUS",
+      null,
+      null,
+      null
+    ],
+    [
+      "Tipo de Atividade",
+      "Quantidade",
+      "Percentual",
+      null,
+      "Status",
+      "Quantidade",
+      "Percentual",
+      null
+    ],
+    [
+      "Fiscalização de segurança em equipe de parceira",
+      1,
+      0.5,
+      null,
+      "Aberta",
+      1,
+      0.5,
+      null
+    ],
+    [
+      "Acompanhamento de projeto prioritário",
+      1,
+      0.5,
+      null,
+      "Em andamento",
+      1,
+      0.5,
+      null
+    ],
+    [
+      "Visita técnica",
+      0,
+      0,
+      null,
+      "Aguardando parceira",
+      0,
+      0,
+      null
+    ],
+    [
+      "Inspeção de campo",
+      0,
+      0,
+      null,
+      "Aguardando Enel",
+      0,
+      0,
+      null
+    ],
+    [
+      "Acompanhamento de execução de projeto",
+      0,
+      0,
+      null,
+      "Concluída",
+      0,
+      0,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      "Cancelada",
+      0,
+      0,
+      null
+    ],
+    [
+      "RESUMO POR QUINZENA",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Período",
+      "Atividades",
+      "Concluídas",
+      "Pendências",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "1ª Quinzena (01-15)",
+      "1899-12-30T00:00:00.000Z",
+      "1899-12-30T00:00:00.000Z",
+      "1899-12-30T00:00:00.000Z",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "2ª Quinzena (16-fim)",
+      "1900-01-01T00:00:00.000Z",
+      "1899-12-31T00:00:00.000Z",
+      "1899-12-31T00:00:00.000Z",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "TOTAL MÊS",
+      2,
+      1,
+      1,
+      null,
+      null,
+      null,
+      null
+    ]
+  ],
+  "DICIONARIO_DADOS": [
+    [
+      "DICIONÁRIO DE DADOS - SISTEMA DE REGISTRO DE ATIVIDADES DE CAMPO ENEL",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "TABELA",
+      "CAMPO",
+      "TIPO_DADO",
+      "TAMANHO",
+      "OBRIGATORIO",
+      "CHAVE",
+      "DESCRICAO"
+    ],
+    [
+      "USUARIOS",
+      "ID_USUARIO",
+      "Texto",
+      10,
+      "Sim",
+      "PK",
+      "Identificador único do usuário (ex: USR001)"
+    ],
+    [
+      "USUARIOS",
+      "NOME_COMPLETO",
+      "Texto",
+      100,
+      "Sim",
+      null,
+      "Nome completo do usuário"
+    ],
+    [
+      "USUARIOS",
+      "EMAIL",
+      "Email",
+      100,
+      "Sim",
+      "UK",
+      "E-mail corporativo (usado para login)"
+    ],
+    [
+      "USUARIOS",
+      "MATRICULA",
+      "Texto",
+      20,
+      "Sim",
+      "UK",
+      "Matrícula funcional"
+    ],
+    [
+      "USUARIOS",
+      "FUNCAO",
+      "Texto",
+      50,
+      "Sim",
+      null,
+      "Função/cargo do usuário"
+    ],
+    [
+      "USUARIOS",
+      "PERFIL_ACESSO",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Técnico de Campo | Técnico Enel/Gestor | Administrador"
+    ],
+    [
+      "USUARIOS",
+      "REGIAO",
+      "Texto",
+      50,
+      "Sim",
+      "FK",
+      "Região de atuação (ref: CONFIGURACOES)"
+    ],
+    [
+      "USUARIOS",
+      "POLO",
+      "Texto",
+      50,
+      "Sim",
+      "FK",
+      "Polo de atuação (ref: CONFIGURACOES)"
+    ],
+    [
+      "USUARIOS",
+      "STATUS_USUARIO",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Ativo | Inativo | Bloqueado"
+    ],
+    [
+      "USUARIOS",
+      "DATA_CADASTRO",
+      "Data",
+      "-",
+      "Sim",
+      null,
+      "Data de cadastro do usuário"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "ID_ATIVIDADE",
+      "Texto",
+      20,
+      "Sim",
+      "PK",
+      "ID único automático (ex: ATV-2026-0001)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DATA_CRIACAO",
+      "Data",
+      "-",
+      "Sim",
+      null,
+      "Data de criação automática (não editável)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "HORA_CRIACAO",
+      "Hora",
+      "-",
+      "Sim",
+      null,
+      "Hora de criação automática (não editável)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DATA_ATIVIDADE",
+      "Data",
+      "-",
+      "Sim",
+      null,
+      "Data em que a atividade foi realizada"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "HORA_INICIO",
+      "Hora",
+      "-",
+      "Sim",
+      null,
+      "Horário de início da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "HORA_TERMINO",
+      "Hora",
+      "-",
+      "Não",
+      null,
+      "Horário de término da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DURACAO_ATIVIDADE",
+      "Hora",
+      "-",
+      "Auto",
+      null,
+      "Calculado: HORA_TERMINO - HORA_INICIO"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "EMAIL_USUARIO",
+      "Email",
+      100,
+      "Sim",
+      "FK",
+      "E-mail do usuário logado (USEREMAIL)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "ID_TECNICO",
+      "Texto",
+      10,
+      "Sim",
+      "FK",
+      "Referência para USUARIOS"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "NOME_TECNICO_ENEL",
+      "Texto",
+      100,
+      "Auto",
+      null,
+      "Preenchido via lookup do ID_TECNICO"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "MATRICULA_TECNICO",
+      "Texto",
+      20,
+      "Auto",
+      null,
+      "Preenchido via lookup do ID_TECNICO"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "REGIAO",
+      "Texto",
+      50,
+      "Sim",
+      "FK",
+      "Região da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "POLO",
+      "Texto",
+      50,
+      "Sim",
+      "FK",
+      "Polo da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "TIPO_ATIVIDADE",
+      "Texto",
+      100,
+      "Sim",
+      "FK",
+      "Referência para TIPOS_ATIVIDADE"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "OUTRO_TIPO_ATIVIDADE",
+      "Texto",
+      100,
+      "Cond",
+      null,
+      "Obrigatório se TIPO_ATIVIDADE = Outras"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "ID_PARCEIRA",
+      "Texto",
+      10,
+      "Sim",
+      "FK",
+      "Referência para PARCEIRAS"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "NOME_PARCEIRA",
+      "Texto",
+      100,
+      "Auto",
+      null,
+      "Preenchido via lookup do ID_PARCEIRA"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "NUMERO_CONTRATO",
+      "Texto",
+      20,
+      "Não",
+      null,
+      "Número do contrato da parceira"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "NUMERO_PROJETO",
+      "Texto",
+      20,
+      "Não",
+      null,
+      "Número do projeto acompanhado"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "NUMERO_OS",
+      "Texto",
+      20,
+      "Não",
+      null,
+      "Número da Ordem de Serviço"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "CIRCUITO",
+      "Texto",
+      30,
+      "Não",
+      null,
+      "Identificação do circuito"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "TIPO_INTERVENCAO",
+      "Texto",
+      50,
+      "Não",
+      "FK",
+      "Tipo de intervenção (ref: CONFIGURACOES)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "LOCALIZACAO_GPS",
+      "LatLong",
+      "-",
+      "Sim",
+      null,
+      "Coordenadas capturadas pelo GPS"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "LATITUDE",
+      "Decimal",
+      "10,7",
+      "Auto",
+      null,
+      "Extraído de LOCALIZACAO_GPS"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "LONGITUDE",
+      "Decimal",
+      "10,7",
+      "Auto",
+      null,
+      "Extraído de LOCALIZACAO_GPS"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "ENDERECO",
+      "Texto",
+      200,
+      "Não",
+      null,
+      "Endereço (pode ser geocodificado)"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "MUNICIPIO",
+      "Texto",
+      100,
+      "Sim",
+      null,
+      "Município da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DESCRICAO_ATIVIDADE",
+      "LongText",
+      2000,
+      "Sim",
+      null,
+      "Descrição detalhada da atividade"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "SITUACAO_ENCONTRADA",
+      "LongText",
+      1000,
+      "Sim",
+      null,
+      "Situação encontrada no local"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "ACAO_REALIZADA",
+      "LongText",
+      1000,
+      "Sim",
+      null,
+      "Ações executadas pelo técnico"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "RESULTADO_ATIVIDADE",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Conforme | Em andamento | Não conforme | Parcial"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "EXISTE_NAO_CONFORMIDADE",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Sim | Não"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DESCRICAO_NAO_CONFORMIDADE",
+      "LongText",
+      1000,
+      "Cond",
+      null,
+      "Obrigatório se EXISTE_NAO_CONFORMIDADE = Sim"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "EXISTE_PENDENCIA",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Sim | Não"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DESCRICAO_PENDENCIA",
+      "LongText",
+      500,
+      "Cond",
+      null,
+      "Obrigatório se EXISTE_PENDENCIA = Sim"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "RESPONSAVEL_PENDENCIA",
+      "Texto",
+      100,
+      "Cond",
+      null,
+      "Obrigatório se EXISTE_PENDENCIA = Sim"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "PRAZO_PENDENCIA",
+      "Data",
+      "-",
+      "Cond",
+      null,
+      "Obrigatório se EXISTE_PENDENCIA = Sim"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "PRIORIDADE",
+      "Enum",
+      "-",
+      "Sim",
+      "FK",
+      "Crítica | Alta | Média | Normal | Baixa"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "STATUS_ATIVIDADE",
+      "Enum",
+      "-",
+      "Sim",
+      "FK",
+      "Conforme lista em CONFIGURACOES"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "QUANTIDADE_FOTOS",
+      "Número",
+      "-",
+      "Auto",
+      null,
+      "COUNT de FOTOS_ATIVIDADES por ID"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "LINK_MAPA",
+      "URL",
+      "-",
+      "Auto",
+      null,
+      "Link Google Maps gerado automaticamente"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "DATA_ULTIMA_ALTERACAO",
+      "DataHora",
+      "-",
+      "Auto",
+      null,
+      "Timestamp da última alteração"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "USUARIO_ULTIMA_ALTERACAO",
+      "Email",
+      100,
+      "Auto",
+      null,
+      "E-mail de quem alterou por último"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "STATUS_SINCRONIZACAO",
+      "Enum",
+      "-",
+      "Auto",
+      null,
+      "Pendente | Sincronizado | Erro"
+    ],
+    [
+      "REGISTROS_ATIVIDADES",
+      "OBSERVACOES",
+      "LongText",
+      1000,
+      "Não",
+      null,
+      "Observações adicionais"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "ID_FOTO",
+      "Texto",
+      15,
+      "Sim",
+      "PK",
+      "ID único da foto (ex: FOTO-0001)"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "ID_ATIVIDADE",
+      "Texto",
+      20,
+      "Sim",
+      "FK",
+      "Referência para REGISTROS_ATIVIDADES"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "FOTO",
+      "Imagem",
+      "-",
+      "Sim",
+      null,
+      "Arquivo de imagem capturado"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "LEGENDA_FOTO",
+      "Texto",
+      200,
+      "Cond",
+      null,
+      "Obrigatório para tipo Não conformidade"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "TIPO_EVIDENCIA",
+      "Enum",
+      "-",
+      "Sim",
+      "FK",
+      "Conforme lista em CONFIGURACOES"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "DATA_FOTO",
+      "Data",
+      "-",
+      "Auto",
+      null,
+      "Data de captura automática"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "HORA_FOTO",
+      "Hora",
+      "-",
+      "Auto",
+      null,
+      "Hora de captura automática"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "LOCALIZACAO_FOTO",
+      "LatLong",
+      "-",
+      "Auto",
+      null,
+      "Coordenadas GPS da foto"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "USUARIO_RESPONSAVEL",
+      "Email",
+      100,
+      "Auto",
+      null,
+      "E-mail do usuário que capturou"
+    ],
+    [
+      "FOTOS_ATIVIDADES",
+      "LINK_ARQUIVO",
+      "URL",
+      "-",
+      "Auto",
+      null,
+      "Link do arquivo no Google Drive"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "ID_ACAO",
+      "Texto",
+      15,
+      "Sim",
+      "PK",
+      "ID único da ação (ex: ACAO-0001)"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "ID_ATIVIDADE",
+      "Texto",
+      20,
+      "Sim",
+      "FK",
+      "Referência para REGISTROS_ATIVIDADES"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "TIPO_ACAO",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "Pendência | Ação Corretiva | Melhoria | Observação"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "DESCRICAO_ACAO",
+      "LongText",
+      500,
+      "Sim",
+      null,
+      "Descrição detalhada da ação"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "RESPONSAVEL",
+      "Texto",
+      100,
+      "Sim",
+      null,
+      "Nome do responsável pela ação"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "EMPRESA_RESPONSAVEL",
+      "Texto",
+      100,
+      "Sim",
+      null,
+      "Empresa responsável (Enel ou parceira)"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "DATA_ABERTURA",
+      "Data",
+      "-",
+      "Auto",
+      null,
+      "Data de abertura automática"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "PRAZO",
+      "Data",
+      "-",
+      "Sim",
+      null,
+      "Data limite para conclusão"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "PRIORIDADE",
+      "Enum",
+      "-",
+      "Sim",
+      "FK",
+      "Crítica | Alta | Média | Normal | Baixa"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "STATUS_ACAO",
+      "Enum",
+      "-",
+      "Sim",
+      "FK",
+      "Conforme lista em CONFIGURACOES"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "DATA_CONCLUSAO",
+      "Data",
+      "-",
+      "Cond",
+      null,
+      "Data efetiva de conclusão"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "COMPROVACAO_CONCLUSAO",
+      "Imagem",
+      "-",
+      "Não",
+      null,
+      "Evidência de conclusão"
+    ],
+    [
+      "ACOES_PENDENCIAS",
+      "OBSERVACOES",
+      "LongText",
+      500,
+      "Não",
+      null,
+      "Observações adicionais"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "ID_LOG",
+      "Texto",
+      15,
+      "Sim",
+      "PK",
+      "ID único do log (ex: LOG-0001)"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "ID_ATIVIDADE",
+      "Texto",
+      20,
+      "Sim",
+      "FK",
+      "Referência para REGISTROS_ATIVIDADES"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "DATA_HORA",
+      "DataHora",
+      "-",
+      "Auto",
+      null,
+      "Timestamp da operação"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "EMAIL_USUARIO",
+      "Email",
+      100,
+      "Auto",
+      null,
+      "E-mail do usuário que realizou a operação"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "TIPO_OPERACAO",
+      "Enum",
+      "-",
+      "Sim",
+      null,
+      "CRIACAO | ALTERACAO | EXCLUSAO | ADICAO_FOTO"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "CAMPO_ALTERADO",
+      "Texto",
+      50,
+      "Cond",
+      null,
+      "Nome do campo alterado"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "VALOR_ANTERIOR",
+      "Texto",
+      500,
+      "Cond",
+      null,
+      "Valor antes da alteração"
+    ],
+    [
+      "LOG_ALTERACOES",
+      "VALOR_NOVO",
+      "Texto",
+      500,
+      "Cond",
+      null,
+      "Valor após a alteração"
+    ]
+  ],
+  "EXPRESSOES_APPSHEET": [
+    [
+      "EXPRESSÕES APPSHEET - PRONTAS PARA IMPLEMENTAÇÃO",
+      null,
+      null,
+      null
+    ],
+    [
+      "CATEGORIA",
+      "CAMPO/USO",
+      "EXPRESSÃO APPSHEET",
+      "DESCRIÇÃO"
+    ],
+    [
+      "ID AUTOMÁTICO",
+      "ID_ATIVIDADE (Initial Value)",
+      "CONCATENATE(\"ATV-\", YEAR(TODAY()), \"-\", TEXT(MAX(REGISTROS_ATIVIDADES[ID_ATIVIDADE])+1, \"0000\"))",
+      "Gera ID único no formato ATV-2026-0001"
+    ],
+    [
+      "ID AUTOMÁTICO",
+      "ID_ATIVIDADE (Alternativa)",
+      "UNIQUEID()",
+      "ID único gerado pelo AppSheet (mais simples)"
+    ],
+    [
+      "ID AUTOMÁTICO",
+      "ID_FOTO (Initial Value)",
+      "CONCATENATE(\"FOTO-\", TEXT(MAX(FOTOS_ATIVIDADES[ID_FOTO])+1, \"0000\"))",
+      "Gera ID único para fotos"
+    ],
+    [
+      "ID AUTOMÁTICO",
+      "ID_ACAO (Initial Value)",
+      "CONCATENATE(\"ACAO-\", TEXT(MAX(ACOES_PENDENCIAS[ID_ACAO])+1, \"0000\"))",
+      "Gera ID único para ações"
+    ],
+    [
+      "DATA/HORA AUTO",
+      "DATA_CRIACAO (Initial Value)",
+      "TODAY()",
+      "Data atual automática (não editável)"
+    ],
+    [
+      "DATA/HORA AUTO",
+      "HORA_CRIACAO (Initial Value)",
+      "TIMENOW()",
+      "Hora atual automática (não editável)"
+    ],
+    [
+      "DATA/HORA AUTO",
+      "DATA_ULTIMA_ALTERACAO (Reset On Edit)",
+      "NOW()",
+      "Atualiza timestamp a cada edição"
+    ],
+    [
+      "DATA/HORA AUTO",
+      "DATA_FOTO (Initial Value)",
+      "TODAY()",
+      "Data de captura da foto"
+    ],
+    [
+      "DATA/HORA AUTO",
+      "HORA_FOTO (Initial Value)",
+      "TIMENOW()",
+      "Hora de captura da foto"
+    ],
+    [
+      "USUÁRIO",
+      "EMAIL_USUARIO (Initial Value)",
+      "USEREMAIL()",
+      "Captura e-mail do usuário logado"
+    ],
+    [
+      "USUÁRIO",
+      "ID_TECNICO (App Formula)",
+      "LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"ID_USUARIO\")",
+      "Busca ID do técnico pelo e-mail"
+    ],
+    [
+      "USUÁRIO",
+      "NOME_TECNICO_ENEL (App Formula)",
+      "LOOKUP([ID_TECNICO], \"USUARIOS\", \"ID_USUARIO\", \"NOME_COMPLETO\")",
+      "Busca nome pelo ID do técnico"
+    ],
+    [
+      "USUÁRIO",
+      "MATRICULA_TECNICO (App Formula)",
+      "LOOKUP([ID_TECNICO], \"USUARIOS\", \"ID_USUARIO\", \"MATRICULA\")",
+      "Busca matrícula pelo ID do técnico"
+    ],
+    [
+      "USUÁRIO",
+      "USUARIO_ULTIMA_ALTERACAO (Reset On Edit)",
+      "USEREMAIL()",
+      "E-mail de quem alterou por último"
+    ],
+    [
+      "USUÁRIO",
+      "PERFIL_USUARIO (Virtual Column)",
+      "LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\")",
+      "Perfil do usuário atual"
+    ],
+    [
+      "LOCALIZAÇÃO",
+      "LOCALIZACAO_GPS (Type)",
+      "LatLong (Tipo de coluna)",
+      "Definir tipo como LatLong no AppSheet"
+    ],
+    [
+      "LOCALIZAÇÃO",
+      "LATITUDE (App Formula)",
+      "INDEX(SPLIT([LOCALIZACAO_GPS], \",\"), 1)",
+      "Extrai latitude das coordenadas"
+    ],
+    [
+      "LOCALIZAÇÃO",
+      "LONGITUDE (App Formula)",
+      "INDEX(SPLIT([LOCALIZACAO_GPS], \",\"), 2)",
+      "Extrai longitude das coordenadas"
+    ],
+    [
+      "LOCALIZAÇÃO",
+      "LINK_MAPA (App Formula)",
+      "CONCATENATE(\"https://maps.google.com/?q=\", [LATITUDE], \",\", [LONGITUDE])",
+      "Gera link do Google Maps"
+    ],
+    [
+      "LOCALIZAÇÃO",
+      "LINK_MAPA (Alternativa)",
+      "HYPERLINK(CONCATENATE(\"https://maps.google.com/?q=\", [LOCALIZACAO_GPS]), \"Ver no Mapa\")",
+      "Link clicável para mapa"
+    ],
+    [
+      "CÁLCULOS",
+      "DURACAO_ATIVIDADE (App Formula)",
+      "[HORA_TERMINO] - [HORA_INICIO]",
+      "Calcula duração da atividade"
+    ],
+    [
+      "CÁLCULOS",
+      "DURACAO_FORMATADA (Virtual)",
+      "CONCATENATE(HOUR([DURACAO_ATIVIDADE]), \"h \", MINUTE([DURACAO_ATIVIDADE]), \"min\")",
+      "Formata duração legível"
+    ],
+    [
+      "CÁLCULOS",
+      "QUANTIDADE_FOTOS (App Formula)",
+      "COUNT(SELECT(FOTOS_ATIVIDADES[ID_FOTO], [ID_ATIVIDADE] = [_THISROW].[ID_ATIVIDADE]))",
+      "Conta fotos vinculadas"
+    ],
+    [
+      "CÁLCULOS",
+      "DIAS_PARA_VENCER (Virtual)",
+      "[PRAZO] - TODAY()",
+      "Dias até vencer pendência"
+    ],
+    [
+      "CÁLCULOS",
+      "PENDENCIA_VENCIDA (Virtual)",
+      "IF(AND([STATUS_ACAO] <> \"Concluída\", [PRAZO] < TODAY()), TRUE, FALSE)",
+      "Identifica pendência vencida"
+    ],
+    [
+      "QUINZENAS",
+      "QUINZENA (Virtual Column)",
+      "IF(DAY([DATA_ATIVIDADE]) <= 15, \"1ª Quinzena\", \"2ª Quinzena\")",
+      "Identifica quinzena da atividade"
+    ],
+    [
+      "QUINZENAS",
+      "MES_ANO (Virtual Column)",
+      "CONCATENATE(MONTH([DATA_ATIVIDADE]), \"/\", YEAR([DATA_ATIVIDADE]))",
+      "Mês e ano da atividade"
+    ],
+    [
+      "QUINZENAS",
+      "PERIODO_RELATORIO (Virtual)",
+      "CONCATENATE([QUINZENA], \" - \", TEXT([DATA_ATIVIDADE], \"MMMM/YYYY\"))",
+      "Período completo para relatório"
+    ],
+    [
+      "CAMPOS CONDICIONAIS",
+      "Show_If OUTRO_TIPO_ATIVIDADE",
+      "[TIPO_ATIVIDADE] = \"Outras\"",
+      "Exibe campo apenas se Tipo = Outras"
+    ],
+    [
+      "CAMPOS CONDICIONAIS",
+      "Show_If DESC_NAO_CONFORMIDADE",
+      "[EXISTE_NAO_CONFORMIDADE] = \"Sim\"",
+      "Exibe descrição se existe NC"
+    ],
+    [
+      "CAMPOS CONDICIONAIS",
+      "Show_If CAMPOS_PENDENCIA",
+      "[EXISTE_PENDENCIA] = \"Sim\"",
+      "Exibe campos de pendência"
+    ],
+    [
+      "CAMPOS CONDICIONAIS",
+      "Show_If JUSTIFICATIVA_CANCEL",
+      "OR([STATUS_ATIVIDADE] = \"Cancelada\", [STATUS_ATIVIDADE] = \"Parcial\")",
+      "Exige justificativa"
+    ],
+    [
+      "VALIDAÇÕES",
+      "Valid_If HORA_TERMINO",
+      "[HORA_TERMINO] > [HORA_INICIO]",
+      "Término deve ser após início"
+    ],
+    [
+      "VALIDAÇÕES",
+      "Valid_If PRAZO_PENDENCIA",
+      "[PRAZO_PENDENCIA] >= TODAY()",
+      "Prazo não pode ser passado"
+    ],
+    [
+      "VALIDAÇÕES",
+      "Valid_If LEGENDA_NC",
+      "IF([TIPO_EVIDENCIA] = \"Não conformidade\", ISNOTBLANK([LEGENDA_FOTO]), TRUE)",
+      "Legenda obrigatória para NC"
+    ],
+    [
+      "VALIDAÇÕES",
+      "Valid_If FOTO_OBRIGATORIA",
+      "IF(OR([TIPO_ATIVIDADE] = \"Fiscalização de segurança em equipe de parceira\", [TIPO_ATIVIDADE] = \"Realização de mega blitz no pátio da parceira\"), [QUANTIDADE_FOTOS] > 0, TRUE)",
+      "Foto obrigatória para fiscalização"
+    ],
+    [
+      "VALIDAÇÕES",
+      "Valid_If RESPONSAVEL_PEND",
+      "IF([EXISTE_PENDENCIA] = \"Sim\", ISNOTBLANK([RESPONSAVEL_PENDENCIA]), TRUE)",
+      "Responsável obrigatório se há pendência"
+    ],
+    [
+      "CONTROLE EDIÇÃO",
+      "Editable_If (Período)",
+      "OR(USEREMAIL() = [EMAIL_USUARIO], LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Administrador\")",
+      "Só autor ou admin pode editar"
+    ],
+    [
+      "CONTROLE EDIÇÃO",
+      "Editable_If (Prazo)",
+      "AND([DATA_CRIACAO] >= TODAY() - 3, [STATUS_ATIVIDADE] <> \"Concluída\")",
+      "Edita até 3 dias após criação"
+    ],
+    [
+      "CONTROLE EDIÇÃO",
+      "Editable_If (Combinado)",
+      "AND(OR(USEREMAIL() = [EMAIL_USUARIO], LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Administrador\"), [DATA_CRIACAO] >= TODAY() - 3)",
+      "Combina autor + prazo"
+    ],
+    [
+      "SEGURANÇA",
+      "Security Filter REGISTROS",
+      "OR(LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Administrador\", LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Técnico Enel/Gestor\", [EMAIL_USUARIO] = USEREMAIL())",
+      "Técnico vê só seus registros; Gestor/Admin vê todos"
+    ],
+    [
+      "SEGURANÇA",
+      "Security Filter USUARIOS",
+      "OR(LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Administrador\", [EMAIL] = USEREMAIL())",
+      "Usuário vê só seu cadastro; Admin vê todos"
+    ],
+    [
+      "SEGURANÇA",
+      "Security Filter por Região",
+      "OR(LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"PERFIL_ACESSO\") = \"Administrador\", LOOKUP(USEREMAIL(), \"USUARIOS\", \"EMAIL\", \"REGIAO\") = [REGIAO], [EMAIL_USUARIO] = USEREMAIL())",
+      "Filtra por região do gestor"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Concluída",
+      "[STATUS_ATIVIDADE] = \"Concluída\"",
+      "Cor verde: #00B050"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Em andamento",
+      "[STATUS_ATIVIDADE] = \"Em andamento\"",
+      "Cor amarela: #FFCC00"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Pendência",
+      "OR([STATUS_ATIVIDADE] = \"Concluída com pendência\", [STATUS_ATIVIDADE] = \"Parcial\")",
+      "Cor laranja: #FF9900"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Cancelada",
+      "[STATUS_ATIVIDADE] = \"Cancelada\"",
+      "Cor vermelha: #C00000"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Rascunho",
+      "[STATUS_ATIVIDADE] = \"Rascunho\"",
+      "Cor cinza: #808080"
+    ],
+    [
+      "FORMATAÇÃO",
+      "Format Rules - Pend Vencida",
+      "AND([PRAZO] < TODAY(), [STATUS_ACAO] <> \"Concluída\")",
+      "Cor vermelha: #C00000"
+    ],
+    [
+      "SLICES",
+      "Slice Minhas Atividades",
+      "[EMAIL_USUARIO] = USEREMAIL()",
+      "Filtra atividades do usuário logado"
+    ],
+    [
+      "SLICES",
+      "Slice Atividades do Dia",
+      "[DATA_ATIVIDADE] = TODAY()",
+      "Filtra atividades de hoje"
+    ],
+    [
+      "SLICES",
+      "Slice Pendências Abertas",
+      "AND([STATUS_ACAO] <> \"Concluída\", [STATUS_ACAO] <> \"Cancelada\")",
+      "Filtra pendências não finalizadas"
+    ],
+    [
+      "SLICES",
+      "Slice Pendências Vencidas",
+      "AND([PRAZO] < TODAY(), [STATUS_ACAO] <> \"Concluída\")",
+      "Filtra pendências vencidas"
+    ],
+    [
+      "SLICES",
+      "Slice 1a Quinzena Atual",
+      "AND(DAY([DATA_ATIVIDADE]) <= 15, MONTH([DATA_ATIVIDADE]) = MONTH(TODAY()), YEAR([DATA_ATIVIDADE]) = YEAR(TODAY()))",
+      "Atividades da 1ª quinzena do mês"
+    ],
+    [
+      "SLICES",
+      "Slice 2a Quinzena Atual",
+      "AND(DAY([DATA_ATIVIDADE]) >= 16, MONTH([DATA_ATIVIDADE]) = MONTH(TODAY()), YEAR([DATA_ATIVIDADE]) = YEAR(TODAY()))",
+      "Atividades da 2ª quinzena do mês"
+    ]
+  ],
+  "SCRIPTS_APPS_SCRIPT": [
+    [
+      "SCRIPTS GOOGLE APPS SCRIPT - AUTOMAÇÕES",
+      null
+    ],
+    [
+      "SCRIPT 1: GERAÇÃO DE RELATÓRIO QUINZENAL EM PDF",
+      null
+    ],
+    [
+      "SCRIPT 1: GERAÇÃO DE RELATÓRIO QUINZENAL EM PDF",
+      null
+    ],
+    [
+      "// Configuração de gatilho: executar no dia 16 (1ª quinzena) e dia 1 (2ª quinzena)",
+      null
+    ],
+    [
+      "function gerarRelatorioQuinzenal() {",
+      null
+    ],
+    [
+      "  const ss = SpreadsheetApp.getActiveSpreadsheet();",
+      null
+    ],
+    [
+      "  const configSheet = ss.getSheetByName('CONFIGURACOES');",
+      null
+    ],
+    [
+      "  const registrosSheet = ss.getSheetByName('REGISTROS_ATIVIDADES');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Determinar período",
+      null
+    ],
+    [
+      "  const hoje = new Date();",
+      null
+    ],
+    [
+      "  const dia = hoje.getDate();",
+      null
+    ],
+    [
+      "  let dataInicio, dataFim, quinzena;",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  if (dia <= 15) {",
+      null
+    ],
+    [
+      "    // Relatório da 2ª quinzena do mês anterior",
+      null
+    ],
+    [
+      "    const mesAnterior = new Date(hoje.getFullYear(), hoje.getMonth() - 1, 16);",
+      null
+    ],
+    [
+      "    dataInicio = new Date(mesAnterior.getFullYear(), mesAnterior.getMonth(), 16);",
+      null
+    ],
+    [
+      "    dataFim = new Date(mesAnterior.getFullYear(), mesAnterior.getMonth() + 1, 0);",
+      null
+    ],
+    [
+      "    quinzena = '2ª Quinzena';",
+      null
+    ],
+    [
+      "  } else {",
+      null
+    ],
+    [
+      "    // Relatório da 1ª quinzena do mês atual",
+      null
+    ],
+    [
+      "    dataInicio = new Date(hoje.getFullYear(), hoje.getMonth(), 1);",
+      null
+    ],
+    [
+      "    dataFim = new Date(hoje.getFullYear(), hoje.getMonth(), 15);",
+      null
+    ],
+    [
+      "    quinzena = '1ª Quinzena';",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Filtrar registros do período",
+      null
+    ],
+    [
+      "  const dados = registrosSheet.getDataRange().getValues();",
+      null
+    ],
+    [
+      "  const cabecalhos = dados[0];",
+      null
+    ],
+    [
+      "  const colData = cabecalhos.indexOf('DATA_ATIVIDADE');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  const registrosPeriodo = dados.filter((row, index) => {",
+      null
+    ],
+    [
+      "    if (index === 0) return false;",
+      null
+    ],
+    [
+      "    const dataAtiv = new Date(row[colData]);",
+      null
+    ],
+    [
+      "    return dataAtiv >= dataInicio && dataAtiv <= dataFim;",
+      null
+    ],
+    [
+      "  });",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Criar relatório em nova aba temporária",
+      null
+    ],
+    [
+      "  let relatorioSheet = ss.getSheetByName('RELATORIO_TEMP');",
+      null
+    ],
+    [
+      "  if (relatorioSheet) ss.deleteSheet(relatorioSheet);",
+      null
+    ],
+    [
+      "  relatorioSheet = ss.insertSheet('RELATORIO_TEMP');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Montar relatório...",
+      null
+    ],
+    [
+      "  // [código de formatação do relatório]",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Exportar para PDF",
+      null
+    ],
+    [
+      "  const folder = DriveApp.getFolderById('ID_PASTA_DRIVE');",
+      null
+    ],
+    [
+      "  const nomeArquivo = `Relatorio_${quinzena}_${Utilities.formatDate(dataFim, 'GMT-3', 'MMyyyy')}.pdf`;",
+      null
+    ],
+    [
+      "  const blob = relatorioSheet.getAs('application/pdf');",
+      null
+    ],
+    [
+      "  folder.createFile(blob.setName(nomeArquivo));",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Enviar por e-mail",
+      null
+    ],
+    [
+      "  const destinatarios = configSheet.getRange('K13').getValue(); // EMAIL_RELATORIO_QUINZENAL",
+      null
+    ],
+    [
+      "  MailApp.sendEmail({",
+      null
+    ],
+    [
+      "    to: destinatarios,",
+      null
+    ],
+    [
+      "SCRIPT 2: ALERTA DE PENDÊNCIAS VENCIDAS",
+      null
+    ],
+    [
+      "// Configurar gatilho: executar diariamente às 8h",
+      null
+    ],
+    [
+      "function alertarPendenciasVencidas() {",
+      null
+    ],
+    [
+      "  const ss = SpreadsheetApp.getActiveSpreadsheet();",
+      null
+    ],
+    [
+      "  const pendenciasSheet = ss.getSheetByName('ACOES_PENDENCIAS');",
+      null
+    ],
+    [
+      "  const usuariosSheet = ss.getSheetByName('USUARIOS');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  const dados = pendenciasSheet.getDataRange().getValues();",
+      null
+    ],
+    [
+      "  const cabecalhos = dados[0];",
+      null
+    ],
+    [
+      "  const hoje = new Date();",
+      null
+    ],
+    [
+      "  hoje.setHours(0, 0, 0, 0);",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Índices das colunas",
+      null
+    ],
+    [
+      "  const colPrazo = cabecalhos.indexOf('PRAZO');",
+      null
+    ],
+    [
+      "  const colStatus = cabecalhos.indexOf('STATUS_ACAO');",
+      null
+    ],
+    [
+      "  const colDesc = cabecalhos.indexOf('DESCRICAO_ACAO');",
+      null
+    ],
+    [
+      "  const colResp = cabecalhos.indexOf('RESPONSAVEL');",
+      null
+    ],
+    [
+      "  const colIdAtiv = cabecalhos.indexOf('ID_ATIVIDADE');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Filtrar pendências vencidas e próximas de vencer",
+      null
+    ],
+    [
+      "  const vencidas = [];",
+      null
+    ],
+    [
+      "  const proximasVencer = [];",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  for (let i = 1; i < dados.length; i++) {",
+      null
+    ],
+    [
+      "    const row = dados[i];",
+      null
+    ],
+    [
+      "    if (row[colStatus] === 'Concluída' || row[colStatus] === 'Cancelada') continue;",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    const prazo = new Date(row[colPrazo]);",
+      null
+    ],
+    [
+      "    prazo.setHours(0, 0, 0, 0);",
+      null
+    ],
+    [
+      "    const diasRestantes = Math.floor((prazo - hoje) / (1000 * 60 * 60 * 24));",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    if (diasRestantes < 0) {",
+      null
+    ],
+    [
+      "      vencidas.push({ ...row, diasAtraso: Math.abs(diasRestantes) });",
+      null
+    ],
+    [
+      "    } else if (diasRestantes <= 3) {",
+      null
+    ],
+    [
+      "      proximasVencer.push({ ...row, diasRestantes });",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Enviar alerta se houver pendências",
+      null
+    ],
+    [
+      "  if (vencidas.length > 0 || proximasVencer.length > 0) {",
+      null
+    ],
+    [
+      "    const gestores = usuariosSheet.getDataRange().getValues()",
+      null
+    ],
+    [
+      "      .filter(row => row[5] === 'Técnico Enel/Gestor' || row[5] === 'Administrador')",
+      null
+    ],
+    [
+      "      .map(row => row[2]); // coluna EMAIL",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    let corpo = 'Prezado(a),\\n\\nSegue o status das pendências de atividades de campo:\\n\\n';",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    if (vencidas.length > 0) {",
+      null
+    ],
+    [
+      "      corpo += `⚠️ PENDÊNCIAS VENCIDAS: ${vencidas.length}\\n`;",
+      null
+    ],
+    [
+      "      vencidas.forEach(p => {",
+      null
+    ],
+    [
+      "        corpo += `- ${p[colDesc]} (${p.diasAtraso} dias de atraso)\\n`;",
+      null
+    ],
+    [
+      "      });",
+      null
+    ],
+    [
+      "      corpo += '\\n';",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    if (proximasVencer.length > 0) {",
+      null
+    ],
+    [
+      "      corpo += `⏰ PRÓXIMAS A VENCER (3 dias): ${proximasVencer.length}\\n`;",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    MailApp.sendEmail({",
+      null
+    ],
+    [
+      "      to: gestores.join(','),",
+      null
+    ],
+    [
+      "      subject: '[ALERTA] Pendências de Atividades de Campo - Enel',",
+      null
+    ],
+    [
+      "      body: corpo",
+      null
+    ],
+    [
+      "    });",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "SCRIPT 3: ORGANIZAÇÃO DE FOTOS NO GOOGLE DRIVE",
+      null
+    ],
+    [
+      "// Este script organiza as fotos em pastas por Ano/Mês/ID_ATIVIDADE",
+      null
+    ],
+    [
+      "// Pode ser acionado via AppSheet Automation ou gatilho",
+      null
+    ],
+    [
+      "function organizarFotoNoDrive(idAtividade, arquivoFoto) {",
+      null
+    ],
+    [
+      "  const pastaRaiz = DriveApp.getFolderById('ID_PASTA_RAIZ_FOTOS');",
+      null
+    ],
+    [
+      "  const dataAtual = new Date();",
+      null
+    ],
+    [
+      "  const ano = dataAtual.getFullYear().toString();",
+      null
+    ],
+    [
+      "  const mes = Utilities.formatDate(dataAtual, 'GMT-3', 'MM - MMMM');",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Criar/obter pasta do ano",
+      null
+    ],
+    [
+      "  let pastaAno = obterOuCriarPasta(pastaRaiz, ano);",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Criar/obter pasta do mês",
+      null
+    ],
+    [
+      "  let pastaMes = obterOuCriarPasta(pastaAno, mes);",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Criar/obter pasta da atividade",
+      null
+    ],
+    [
+      "  let pastaAtividade = obterOuCriarPasta(pastaMes, idAtividade);",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  // Mover arquivo para a pasta",
+      null
+    ],
+    [
+      "  const arquivo = DriveApp.getFileById(arquivoFoto);",
+      null
+    ],
+    [
+      "  arquivo.moveTo(pastaAtividade);",
+      null
+    ],
+    [
+      "  ",
+      null
+    ],
+    [
+      "  return pastaAtividade.getUrl();",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "function obterOuCriarPasta(pastaParent, nomePasta) {",
+      null
+    ],
+    [
+      "  const pastas = pastaParent.getFoldersByName(nomePasta);",
+      null
+    ],
+    [
+      "  if (pastas.hasNext()) {",
+      null
+    ],
+    [
+      "    return pastas.next();",
+      null
+    ],
+    [
+      "  } else {",
+      null
+    ],
+    [
+      "    return pastaParent.createFolder(nomePasta);",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "SCRIPT 4: GEOCODIFICAÇÃO REVERSA (COORDENADAS → ENDEREÇO)",
+      null
+    ],
+    [
+      "// Converte coordenadas GPS em endereço legível",
+      null
+    ],
+    [
+      "// Requer API Key do Google Maps (opcional, mas recomendado para alto volume)",
+      null
+    ],
+    [
+      "function geocodificarCoordenadas(latitude, longitude) {",
+      null
+    ],
+    [
+      "  try {",
+      null
+    ],
+    [
+      "    const response = Maps.newGeocoder()",
+      null
+    ],
+    [
+      "      .reverseGeocode(parseFloat(latitude), parseFloat(longitude));",
+      null
+    ],
+    [
+      "    ",
+      null
+    ],
+    [
+      "    if (response.status === 'OK' && response.results.length > 0) {",
+      null
+    ],
+    [
+      "      const resultado = response.results[0];",
+      null
+    ],
+    [
+      "      return {",
+      null
+    ],
+    [
+      "        endereco_completo: resultado.formatted_address,",
+      null
+    ],
+    [
+      "        municipio: extrairComponente(resultado, 'administrative_area_level_2'),",
+      null
+    ],
+    [
+      "        estado: extrairComponente(resultado, 'administrative_area_level_1'),",
+      null
+    ],
+    [
+      "        bairro: extrairComponente(resultado, 'sublocality_level_1'),",
+      null
+    ],
+    [
+      "        logradouro: extrairComponente(resultado, 'route')",
+      null
+    ],
+    [
+      "      };",
+      null
+    ],
+    [
+      "    }",
+      null
+    ],
+    [
+      "  } catch (e) {",
+      null
+    ],
+    [
+      "    Logger.log('Erro na geocodificação: ' + e.message);",
+      null
+    ],
+    [
+      "  }",
+      null
+    ],
+    [
+      "  return null;",
+      null
+    ],
+    [
+      "}",
+      null
+    ],
+    [
+      "function extrairComponente(resultado, tipo) {",
+      null
+    ],
+    [
+      "  const componente = resultado.address_components.find(c => c.types.includes(tipo));",
+      null
+    ],
+    [
+      "  return componente ? componente.long_name : '';",
+      null
+    ],
+    [
+      "}",
+      null
+    ]
+  ],
+  "MANUAL_USUARIO": [
+    [
+      "MANUAL DO USUÁRIO - REGISTRO DE ATIVIDADES DE CAMPO ENEL",
+      null,
+      null,
+      null
+    ],
+    [
+      "MANUAL DO TÉCNICO DE CAMPO",
+      null,
+      null,
+      null
+    ],
+    [
+      "1. ACESSO AO APLICATIVO",
+      null,
+      null,
+      null
+    ],
+    [
+      "Passo",
+      "Ação",
+      "Resultado Esperado",
+      "Observação"
+    ],
+    [
+      1.1,
+      "Abra o aplicativo no celular",
+      "Tela de login aparece",
+      "Use o ícone 'Enel Campo'"
+    ],
+    [
+      1.2,
+      "Faça login com seu e-mail @enel.com",
+      "Acesso à tela inicial",
+      "Mesmo e-mail do Google"
+    ],
+    [
+      1.3,
+      "Verifique seu nome no canto superior",
+      "Seu nome aparece corretamente",
+      "Se incorreto, contate admin"
+    ],
+    [
+      "2. REGISTRAR NOVA ATIVIDADE",
+      null,
+      null,
+      null
+    ],
+    [
+      "Passo",
+      "Ação",
+      "Resultado Esperado",
+      "Observação"
+    ],
+    [
+      2.1,
+      "Na tela inicial, toque em 'Nova Atividade'",
+      "Formulário de registro abre",
+      "Botão verde grande"
+    ],
+    [
+      2.2,
+      "Confira dados automáticos (data, nome, matrícula)",
+      "Campos preenchidos corretamente",
+      "Não editáveis"
+    ],
+    [
+      2.3,
+      "Selecione o Tipo de Atividade",
+      "Lista suspensa com opções",
+      "Se 'Outras', descreva abaixo"
+    ],
+    [
+      2.4,
+      "Selecione a Parceira",
+      "Lista com parceiras cadastradas",
+      null
+    ],
+    [
+      2.5,
+      "Preencha Projeto/OS/Circuito conforme aplicável",
+      "Campos preenchidos",
+      "Opcional"
+    ],
+    [
+      2.6,
+      "Informe horário de início e término",
+      "Duração calculada automaticamente",
+      null
+    ],
+    [
+      2.7,
+      "Toque em 'Capturar Localização'",
+      "GPS ativado, coordenadas aparecem",
+      "Permita acesso ao GPS"
+    ],
+    [
+      2.8,
+      "Confirme ou corrija o endereço",
+      "Endereço visível",
+      "Link do mapa gerado"
+    ],
+    [
+      2.9,
+      "Preencha descrição da atividade",
+      "Texto salvo",
+      "Seja detalhado"
+    ],
+    [
+      2.1,
+      "Informe situação encontrada",
+      "Texto salvo",
+      null
+    ],
+    [
+      2.11,
+      "Descreva ações realizadas",
+      "Texto salvo",
+      null
+    ],
+    [
+      2.12,
+      "Se houver não conformidade, marque 'Sim' e descreva",
+      "Campos extras aparecem",
+      "Foto obrigatória"
+    ],
+    [
+      2.13,
+      "Se houver pendência, marque 'Sim'",
+      "Campos de pendência aparecem",
+      null
+    ],
+    [
+      2.14,
+      "Informe responsável, empresa e prazo da pendência",
+      "Campos preenchidos",
+      "Prazo obrigatório"
+    ],
+    [
+      2.15,
+      "Selecione prioridade e status",
+      "Valores selecionados",
+      null
+    ],
+    [
+      2.16,
+      "Avance para 'Adicionar Fotos'",
+      "Tela de fotos abre",
+      null
+    ],
+    [
+      "3. ADICIONAR FOTOS",
+      null,
+      null,
+      null
+    ],
+    [
+      "Passo",
+      "Ação",
+      "Resultado Esperado",
+      "Observação"
+    ],
+    [
+      3.1,
+      "Toque em 'Adicionar Foto'",
+      "Câmera do celular abre",
+      null
+    ],
+    [
+      3.2,
+      "Tire a foto da evidência",
+      "Foto capturada",
+      "Boa iluminação"
+    ],
+    [
+      3.3,
+      "Selecione o tipo de evidência",
+      "Lista com opções",
+      "Ex: Antes, Durante, Depois"
+    ],
+    [
+      3.4,
+      "Digite uma legenda descritiva",
+      "Texto salvo",
+      "Obrigatório para NC"
+    ],
+    [
+      3.5,
+      "Repita para adicionar mais fotos",
+      "Galeria atualizada",
+      "Sem limite de fotos"
+    ],
+    [
+      3.6,
+      "Revise a galeria antes de continuar",
+      "Fotos visíveis",
+      "Pode excluir se necessário"
+    ],
+    [
+      "4. CONFERIR E ENVIAR",
+      null,
+      null,
+      null
+    ],
+    [
+      "Passo",
+      "Ação",
+      "Resultado Esperado",
+      "Observação"
+    ],
+    [
+      4.1,
+      "Na tela de resumo, confira todos os dados",
+      "Resumo completo",
+      "ID, técnico, data, local"
+    ],
+    [
+      4.2,
+      "Se precisar corrigir, toque em 'Editar'",
+      "Volta ao formulário",
+      null
+    ],
+    [
+      4.3,
+      "Para salvar sem finalizar, use 'Rascunho'",
+      "Status = Rascunho",
+      "Pode continuar depois"
+    ],
+    [
+      4.4,
+      "Quando correto, toque em 'Finalizar'",
+      "Registro enviado",
+      "Status atualizado"
+    ],
+    [
+      4.5,
+      "Aguarde sincronização",
+      "Confirmação na tela",
+      "Offline sincroniza depois"
+    ],
+    [
+      "5. CONSULTAR MEUS REGISTROS",
+      null,
+      null,
+      null
+    ],
+    [
+      "Passo",
+      "Ação",
+      "Resultado Esperado",
+      "Observação"
+    ],
+    [
+      5.1,
+      "Toque em 'Meus Registros'",
+      "Lista de atividades",
+      "Ordenado por data"
+    ],
+    [
+      5.2,
+      "Use os filtros para buscar",
+      "Lista filtrada",
+      "Por período, status"
+    ],
+    [
+      5.3,
+      "Toque em um registro para detalhes",
+      "Tela de detalhes",
+      null
+    ],
+    [
+      "MANUAL DO GESTOR/TÉCNICO ENEL",
+      null,
+      null,
+      null
+    ],
+    [
+      "1. CONSULTAR ATIVIDADES",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Todas as Atividades' para ver registros da sua região",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Use filtros: período, técnico, parceira, tipo, status",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Clique em qualquer registro para ver detalhes completos",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Visualize fotos e localização no mapa",
+      null,
+      null,
+      null
+    ],
+    [
+      "2. ACOMPANHAR PENDÊNCIAS",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Pendências Abertas' para ver todas as pendências ativas",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Pendências Vencidas' para ações urgentes",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Verifique responsáveis e prazos",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acompanhe até a conclusão",
+      null,
+      null,
+      null
+    ],
+    [
+      "3. DASHBOARD E INDICADORES",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Dashboard' para visão gerencial",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Filtre por período, região, parceira",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Analise gráficos de distribuição",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Identifique tendências e problemas",
+      null,
+      null,
+      null
+    ],
+    [
+      "4. RELATÓRIOS",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Relatórios quinzenais são gerados automaticamente",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Relatórios' para baixar PDFs",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Exporte dados para análises customizadas",
+      null,
+      null,
+      null
+    ],
+    [
+      "MANUAL DO ADMINISTRADOR",
+      null,
+      null,
+      null
+    ],
+    [
+      "1. GERENCIAR USUÁRIOS",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Cadastros > Usuários' para adicionar/editar usuários",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Defina perfil de acesso: Técnico de Campo, Gestor ou Administrador",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Atribua região e polo de atuação",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Ative ou desative usuários conforme necessário",
+      null,
+      null,
+      null
+    ],
+    [
+      "2. GERENCIAR LISTAS",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Adicione novos Tipos de Atividade em 'Cadastros > Tipos'",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Cadastre novas Parceiras em 'Cadastros > Parceiras'",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Configure Regiões, Polos e outras listas em 'Configurações'",
+      null,
+      null,
+      null
+    ],
+    [
+      "3. CONFIGURAÇÕES DO SISTEMA",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Defina prazo de edição permitido (dias)",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Configure destinatários dos relatórios automáticos",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Defina pasta do Google Drive para armazenamento",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Configure horários das automações",
+      null,
+      null,
+      null
+    ],
+    [
+      "4. AUDITORIA E LOGS",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Acesse 'Logs' para ver histórico de alterações",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Monitore criações, edições e exclusões",
+      null,
+      null,
+      null
+    ],
+    [
+      "• Identifique usuário e data/hora de cada operação",
+      null,
+      null,
+      null
+    ]
+  ],
+  "PLANO_TESTES": [
+    [
+      "PLANO DE TESTES - SISTEMA DE REGISTRO DE ATIVIDADES DE CAMPO",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "ID_TESTE",
+      "CATEGORIA",
+      "CENÁRIO",
+      "PASSOS",
+      "RESULTADO_ESPERADO",
+      "STATUS",
+      "OBSERVAÇÕES"
+    ],
+    [
+      "T001",
+      "Autenticação",
+      "Login com e-mail válido",
+      "1. Abrir app 2. Inserir e-mail @enel.com 3. Confirmar",
+      "Acesso concedido, nome exibido",
+      "Pendente",
+      null
+    ],
+    [
+      "T002",
+      "Autenticação",
+      "Login com e-mail inválido",
+      "1. Abrir app 2. Inserir e-mail externo",
+      "Acesso negado, mensagem de erro",
+      "Pendente",
+      null
+    ],
+    [
+      "T003",
+      "ID Automático",
+      "Geração de ID único",
+      "1. Criar nova atividade 2. Verificar ID gerado",
+      "ID no formato ATV-AAAA-NNNN único",
+      "Pendente",
+      null
+    ],
+    [
+      "T004",
+      "ID Automático",
+      "ID não editável",
+      "1. Criar atividade 2. Tentar editar ID",
+      "Campo bloqueado para edição",
+      "Pendente",
+      null
+    ],
+    [
+      "T005",
+      "Data/Hora Auto",
+      "Preenchimento automático",
+      "1. Criar nova atividade 2. Verificar data/hora",
+      "Data e hora atuais preenchidos",
+      "Pendente",
+      null
+    ],
+    [
+      "T006",
+      "Data/Hora Auto",
+      "Campos não editáveis",
+      "1. Tentar alterar data de criação",
+      "Campo bloqueado",
+      "Pendente",
+      null
+    ],
+    [
+      "T007",
+      "Usuário",
+      "Identificação automática",
+      "1. Login 2. Verificar nome e matrícula",
+      "Dados do usuário preenchidos via lookup",
+      "Pendente",
+      null
+    ],
+    [
+      "T008",
+      "GPS",
+      "Captura de localização",
+      "1. Tocar em capturar GPS 2. Permitir acesso",
+      "Coordenadas capturadas corretamente",
+      "Pendente",
+      null
+    ],
+    [
+      "T009",
+      "GPS",
+      "Link do Google Maps",
+      "1. Capturar GPS 2. Verificar link gerado",
+      "Link abre localização correta no Maps",
+      "Pendente",
+      null
+    ],
+    [
+      "T010",
+      "GPS",
+      "Funcionamento sem GPS",
+      "1. Desativar GPS 2. Tentar capturar",
+      "Mensagem solicitando ativação",
+      "Pendente",
+      null
+    ],
+    [
+      "T011",
+      "Campos Cond.",
+      "Tipo 'Outras' mostra campo extra",
+      "1. Selecionar 'Outras' 2. Verificar campo",
+      "Campo OUTRO_TIPO visível e obrigatório",
+      "Pendente",
+      null
+    ],
+    [
+      "T012",
+      "Campos Cond.",
+      "Não conformidade mostra descrição",
+      "1. Marcar NC = Sim",
+      "Campo de descrição NC aparece",
+      "Pendente",
+      null
+    ],
+    [
+      "T013",
+      "Campos Cond.",
+      "Pendência mostra campos extras",
+      "1. Marcar Pendência = Sim",
+      "Responsável, prazo, prioridade aparecem",
+      "Pendente",
+      null
+    ],
+    [
+      "T014",
+      "Validação",
+      "Horário término > início",
+      "1. Inserir término < início 2. Salvar",
+      "Erro de validação exibido",
+      "Pendente",
+      null
+    ],
+    [
+      "T015",
+      "Validação",
+      "Campos obrigatórios",
+      "1. Deixar campos vazios 2. Salvar",
+      "Mensagem indicando campos faltantes",
+      "Pendente",
+      null
+    ],
+    [
+      "T016",
+      "Fotos",
+      "Adicionar múltiplas fotos",
+      "1. Adicionar 5 fotos diferentes",
+      "Todas vinculadas à atividade",
+      "Pendente",
+      null
+    ],
+    [
+      "T017",
+      "Fotos",
+      "Legenda obrigatória para NC",
+      "1. Foto tipo NC sem legenda",
+      "Não permite salvar sem legenda",
+      "Pendente",
+      null
+    ],
+    [
+      "T018",
+      "Fotos",
+      "Organização no Drive",
+      "1. Adicionar foto 2. Verificar Drive",
+      "Pasta Ano/Mês/ID criada corretamente",
+      "Pendente",
+      null
+    ],
+    [
+      "T019",
+      "Segurança",
+      "Técnico vê só seus registros",
+      "1. Login técnico 2. Verificar lista",
+      "Apenas registros próprios visíveis",
+      "Pendente",
+      null
+    ],
+    [
+      "T020",
+      "Segurança",
+      "Gestor vê registros da região",
+      "1. Login gestor 2. Verificar lista",
+      "Registros da região visíveis",
+      "Pendente",
+      null
+    ],
+    [
+      "T021",
+      "Segurança",
+      "Admin acesso total",
+      "1. Login admin 2. Verificar todos dados",
+      "Acesso a todos os registros e configurações",
+      "Pendente",
+      null
+    ],
+    [
+      "T022",
+      "Edição",
+      "Editar dentro do prazo",
+      "1. Editar registro < 3 dias",
+      "Edição permitida e salva",
+      "Pendente",
+      null
+    ],
+    [
+      "T023",
+      "Edição",
+      "Bloqueio após prazo",
+      "1. Tentar editar registro > 3 dias",
+      "Edição bloqueada, mensagem exibida",
+      "Pendente",
+      null
+    ],
+    [
+      "T024",
+      "Offline",
+      "Criar registro sem internet",
+      "1. Desativar wifi/dados 2. Criar registro",
+      "Registro salvo localmente",
+      "Pendente",
+      null
+    ],
+    [
+      "T025",
+      "Offline",
+      "Sincronização ao reconectar",
+      "1. Ativar internet 2. Verificar sync",
+      "Registro sincronizado automaticamente",
+      "Pendente",
+      null
+    ],
+    [
+      "T026",
+      "Dashboard",
+      "Indicadores corretos",
+      "1. Verificar total atividades",
+      "Número corresponde aos registros",
+      "Pendente",
+      null
+    ],
+    [
+      "T027",
+      "Dashboard",
+      "Filtros funcionando",
+      "1. Aplicar filtro período 2. Verificar",
+      "Indicadores recalculados corretamente",
+      "Pendente",
+      null
+    ],
+    [
+      "T028",
+      "Relatório",
+      "Geração quinzenal automática",
+      "1. Aguardar dia 16 2. Verificar e-mail",
+      "PDF recebido com dados corretos",
+      "Pendente",
+      null
+    ],
+    [
+      "T029",
+      "Relatório",
+      "Conteúdo do relatório",
+      "1. Abrir PDF gerado",
+      "Todas as seções presentes e corretas",
+      "Pendente",
+      null
+    ],
+    [
+      "T030",
+      "Pendências",
+      "Alerta de vencimento",
+      "1. Criar pendência com prazo 2. Aguardar",
+      "Alerta enviado no dia configurado",
+      "Pendente",
+      null
+    ],
+    [
+      "T031",
+      "Pendências",
+      "Destaque de vencidas",
+      "1. Ver lista pendências vencidas",
+      "Pendências vencidas em vermelho",
+      "Pendente",
+      null
+    ],
+    [
+      "T032",
+      "Parceiras",
+      "Lista suspensa funcional",
+      "1. Criar atividade 2. Selecionar parceira",
+      "Lista com todas parceiras cadastradas",
+      "Pendente",
+      null
+    ],
+    [
+      "T033",
+      "Parceiras",
+      "Cadastrar nova parceira",
+      "1. Admin > Parceiras > Nova",
+      "Parceira disponível na lista",
+      "Pendente",
+      null
+    ],
+    [
+      "T034",
+      "Tipos Ativ.",
+      "Lista suspensa funcional",
+      "1. Criar atividade 2. Selecionar tipo",
+      "Lista com 17 tipos disponíveis",
+      "Pendente",
+      null
+    ],
+    [
+      "T035",
+      "Tipos Ativ.",
+      "Cadastrar novo tipo",
+      "1. Admin > Tipos > Novo",
+      "Tipo disponível na lista",
+      "Pendente",
+      null
+    ],
+    [
+      "T036",
+      "Log",
+      "Registro de criação",
+      "1. Criar atividade 2. Verificar log",
+      "Entrada de criação no log",
+      "Pendente",
+      null
+    ],
+    [
+      "T037",
+      "Log",
+      "Registro de alteração",
+      "1. Editar atividade 2. Verificar log",
+      "Entrada com campo e valores anterior/novo",
+      "Pendente",
+      null
+    ],
+    [
+      "T038",
+      "Mapa",
+      "Visualização de pontos",
+      "1. Acessar mapa de atividades",
+      "Pontos exibidos nas coordenadas corretas",
+      "Pendente",
+      null
+    ],
+    [
+      "T039",
+      "Performance",
+      "Carga com 100 registros",
+      "1. Carregar lista com 100+ registros",
+      "Lista carrega em < 5 segundos",
+      "Pendente",
+      null
+    ],
+    [
+      "T040",
+      "Performance",
+      "Sincronização múltipla",
+      "1. Sync 10 registros offline",
+      "Todos sincronizados corretamente",
+      "Pendente",
+      null
+    ]
+  ],
+  "CHECKLIST_IMPLEMENTACAO": [
+    [
+      "CHECKLIST DE IMPLEMENTAÇÃO - APPSHEET",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "ETAPA",
+      "TAREFA",
+      "DESCRIÇÃO",
+      "STATUS",
+      "RESPONSÁVEL"
+    ],
+    [
+      "1. PREPARAÇÃO",
+      "1.1 Criar Google Sheets",
+      "Criar planilha base no Google Drive",
+      "Pendente",
+      null
+    ],
+    [
+      "1. PREPARAÇÃO",
+      "1.2 Criar todas as abas",
+      "USUARIOS, REGISTROS, TIPOS, PARCEIRAS, FOTOS, ACOES, CONFIG, LOG",
+      "Pendente",
+      null
+    ],
+    [
+      "1. PREPARAÇÃO",
+      "1.3 Inserir cabeçalhos",
+      "Copiar cabeçalhos deste modelo para cada aba",
+      "Pendente",
+      null
+    ],
+    [
+      "1. PREPARAÇÃO",
+      "1.4 Inserir dados iniciais",
+      "Tipos de atividade, parceiras, configurações",
+      "Pendente",
+      null
+    ],
+    [
+      "1. PREPARAÇÃO",
+      "1.5 Criar pasta no Drive",
+      "Estrutura: Atividades de Campo/Ano/Mês",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.1 Criar app no AppSheet",
+      "Acessar appsheet.com, criar novo app",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.2 Conectar Google Sheets",
+      "Vincular planilha como fonte de dados",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.3 Configurar tabelas",
+      "Definir tipos de colunas em cada tabela",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.4 Definir chaves primárias",
+      "ID_ATIVIDADE, ID_USUARIO, ID_FOTO, etc.",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.5 Configurar relacionamentos",
+      "Refs entre FOTOS→REGISTROS, ACOES→REGISTROS",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.6 Criar colunas virtuais",
+      "QUINZENA, MES_ANO, DIAS_PARA_VENCER, etc.",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.7 Inserir expressões App Formula",
+      "Copiar expressões da aba EXPRESSOES_APPSHEET",
+      "Pendente",
+      null
+    ],
+    [
+      "2. APPSHEET",
+      "2.8 Inserir expressões Initial Value",
+      "ID automático, data/hora, usuário",
+      "Pendente",
+      null
+    ],
+    [
+      "3. FORMULÁRIOS",
+      "3.1 Criar formulário de atividade",
+      "Form com todas as seções/etapas",
+      "Pendente",
+      null
+    ],
+    [
+      "3. FORMULÁRIOS",
+      "3.2 Configurar Show_If",
+      "Campos condicionais conforme expressões",
+      "Pendente",
+      null
+    ],
+    [
+      "3. FORMULÁRIOS",
+      "3.3 Configurar Valid_If",
+      "Validações de horário, pendência, etc.",
+      "Pendente",
+      null
+    ],
+    [
+      "3. FORMULÁRIOS",
+      "3.4 Configurar Editable_If",
+      "Controle de edição por prazo e perfil",
+      "Pendente",
+      null
+    ],
+    [
+      "3. FORMULÁRIOS",
+      "3.5 Formulário de fotos",
+      "Inline ou relacionado a FOTOS_ATIVIDADES",
+      "Pendente",
+      null
+    ],
+    [
+      "4. SEGURANÇA",
+      "4.1 Configurar Security Filters",
+      "Filtros por USEREMAIL e PERFIL",
+      "Pendente",
+      null
+    ],
+    [
+      "4. SEGURANÇA",
+      "4.2 Definir permissões por tabela",
+      "Read/Add/Update/Delete por perfil",
+      "Pendente",
+      null
+    ],
+    [
+      "4. SEGURANÇA",
+      "4.3 Configurar login obrigatório",
+      "Settings > Security > Require sign-in",
+      "Pendente",
+      null
+    ],
+    [
+      "4. SEGURANÇA",
+      "4.4 Adicionar domínio permitido",
+      "Whitelist @enel.com",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.1 Criar view página inicial",
+      "Dashboard com botões grandes",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.2 Criar slices",
+      "Minhas Atividades, Pendências, etc.",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.3 Criar views de lista",
+      "Atividades, Pendências, Fotos",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.4 Criar view de mapa",
+      "Localização das atividades",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.5 Criar dashboard",
+      "Charts com indicadores",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.6 Configurar Format Rules",
+      "Cores por status conforme especificado",
+      "Pendente",
+      null
+    ],
+    [
+      "5. VIEWS E UX",
+      "5.7 Configurar ícones e tema",
+      "Cores Enel, ícones intuitivos",
+      "Pendente",
+      null
+    ],
+    [
+      "6. AUTOMAÇÕES",
+      "6.1 Criar bot de relatório quinzenal",
+      "Workflow AppSheet ou Apps Script",
+      "Pendente",
+      null
+    ],
+    [
+      "6. AUTOMAÇÕES",
+      "6.2 Criar bot de alerta pendências",
+      "Notificação de vencimento",
+      "Pendente",
+      null
+    ],
+    [
+      "6. AUTOMAÇÕES",
+      "6.3 Configurar organização de fotos",
+      "Mover para pasta estruturada no Drive",
+      "Pendente",
+      null
+    ],
+    [
+      "6. AUTOMAÇÕES",
+      "6.4 Configurar gatilhos (triggers)",
+      "Time-based triggers no Apps Script",
+      "Pendente",
+      null
+    ],
+    [
+      "7. TESTES",
+      "7.1 Executar plano de testes",
+      "40 casos de teste na aba PLANO_TESTES",
+      "Pendente",
+      null
+    ],
+    [
+      "7. TESTES",
+      "7.2 Testes em dispositivos reais",
+      "Android e iOS",
+      "Pendente",
+      null
+    ],
+    [
+      "7. TESTES",
+      "7.3 Testes offline",
+      "Criar e sincronizar sem internet",
+      "Pendente",
+      null
+    ],
+    [
+      "7. TESTES",
+      "7.4 Testes de carga",
+      "100+ registros, múltiplos usuários",
+      "Pendente",
+      null
+    ],
+    [
+      "7. TESTES",
+      "7.5 Correção de bugs",
+      "Ajustes identificados nos testes",
+      "Pendente",
+      null
+    ],
+    [
+      "8. PUBLICAÇÃO",
+      "8.1 Deploy do app",
+      "Publicar versão de produção",
+      "Pendente",
+      null
+    ],
+    [
+      "8. PUBLICAÇÃO",
+      "8.2 Gerar link de instalação",
+      "Compartilhar com usuários",
+      "Pendente",
+      null
+    ],
+    [
+      "8. PUBLICAÇÃO",
+      "8.3 Treinamento de usuários",
+      "Apresentar manuais e funcionalidades",
+      "Pendente",
+      null
+    ],
+    [
+      "8. PUBLICAÇÃO",
+      "8.4 Go-live",
+      "Início da operação em produção",
+      "Pendente",
+      null
+    ]
+  ],
+  "ESTRUTURA_PASTAS": [
+    [
+      "ESTRUTURA DE PASTAS - GOOGLE DRIVE",
+      null,
+      null,
+      null
+    ],
+    [
+      "PASTA",
+      "SUBPASTA",
+      "CONTEÚDO",
+      "PERMISSÃO"
+    ],
+    [
+      "📁 Registro_Atividades_Enel",
+      null,
+      "Pasta raiz do projeto",
+      "Admin"
+    ],
+    [
+      null,
+      "📁 Base_Dados",
+      "Planilha Google Sheets principal",
+      "Admin"
+    ],
+    [
+      null,
+      "📁 AppSheet",
+      "Arquivos do aplicativo",
+      "Admin"
+    ],
+    [
+      null,
+      "📁 Scripts",
+      "Códigos Google Apps Script",
+      "Admin"
+    ],
+    [
+      null,
+      "📁 Fotos_Atividades",
+      "Fotos organizadas por período",
+      "Gestor/Admin"
+    ],
+    [
+      null,
+      "    📁 2026",
+      null,
+      null
+    ],
+    [
+      null,
+      "        📁 01-Janeiro",
+      null,
+      null
+    ],
+    [
+      null,
+      "            📁 ATV-2026-0001",
+      "Fotos da atividade específica",
+      null
+    ],
+    [
+      null,
+      "            📁 ATV-2026-0002",
+      null,
+      null
+    ],
+    [
+      null,
+      "        📁 02-Fevereiro",
+      null,
+      null
+    ],
+    [
+      null,
+      "        📁 ...",
+      null,
+      null
+    ],
+    [
+      null,
+      "    📁 2027",
+      null,
+      null
+    ],
+    [
+      null,
+      "📁 Relatorios",
+      "Relatórios gerados",
+      "Gestor/Admin"
+    ],
+    [
+      null,
+      "    📁 Quinzenais",
+      null,
+      null
+    ],
+    [
+      null,
+      "        📁 2026",
+      null,
+      null
+    ],
+    [
+      null,
+      "            📁 01-Janeiro",
+      null,
+      null
+    ],
+    [
+      null,
+      "                📄 Relatorio_Q1_Jan_2026.pdf",
+      "1ª quinzena Janeiro",
+      null
+    ],
+    [
+      null,
+      "                📄 Relatorio_Q2_Jan_2026.pdf",
+      "2ª quinzena Janeiro",
+      null
+    ],
+    [
+      null,
+      "            📁 02-Fevereiro",
+      null,
+      null
+    ],
+    [
+      null,
+      "    📁 Mensais",
+      null,
+      null
+    ],
+    [
+      null,
+      "        📁 2026",
+      null,
+      null
+    ],
+    [
+      null,
+      "            📄 Relatorio_Mensal_Jan_2026.pdf",
+      "Consolidado Janeiro",
+      null
+    ],
+    [
+      null,
+      "            📄 Relatorio_Mensal_Fev_2026.pdf",
+      "Consolidado Fevereiro",
+      null
+    ],
+    [
+      null,
+      "📁 Templates",
+      "Modelos de relatórios",
+      "Admin"
+    ],
+    [
+      null,
+      "📁 Manuais",
+      "Documentação e manuais",
+      "Todos"
+    ],
+    [
+      null,
+      "📁 Backup",
+      "Backups automáticos mensais",
+      "Admin"
+    ]
+  ]
+}
